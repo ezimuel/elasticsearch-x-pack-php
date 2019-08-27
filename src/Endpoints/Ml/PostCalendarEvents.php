@@ -26,16 +26,12 @@ class PostCalendarEvents extends AbstractEndpoint
         }
         $calendar_id = $this->calendar_id;
 
-        if (isset($calendar_id)) {
-            return "/_xpack/ml/calendars/$calendar_id/events";
-        }
+        return "/_xpack/ml/calendars/$calendar_id/events";
     }
 
     public function getParamWhitelist(): array
     {
-        return [
-            
-        ];
+        return [];
     }
 
     public function getMethod(): string

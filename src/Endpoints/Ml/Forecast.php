@@ -26,9 +26,7 @@ class Forecast extends AbstractEndpoint
         }
         $job_id = $this->job_id;
 
-        if (isset($job_id)) {
-            return "/_xpack/ml/anomaly_detectors/$job_id/_forecast";
-        }
+        return "/_xpack/ml/anomaly_detectors/$job_id/_forecast";
     }
 
     public function getParamWhitelist(): array

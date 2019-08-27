@@ -26,9 +26,7 @@ class ActivateWatch extends AbstractEndpoint
         }
         $watch_id = $this->watch_id;
 
-        if (isset($watch_id)) {
-            return "/_xpack/watcher/watch/$watch_id/_activate";
-        }
+        return "/_xpack/watcher/watch/$watch_id/_activate";
     }
 
     public function getParamWhitelist(): array

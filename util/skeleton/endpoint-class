@@ -24,9 +24,7 @@ class :endpoint extends AbstractEndpoint
 
     public function getParamWhitelist(): array
     {
-        return [
-            :params
-        ];
+        return [:params];
     }
 
     public function getMethod(): string

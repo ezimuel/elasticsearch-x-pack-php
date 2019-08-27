@@ -26,9 +26,7 @@ class GetInfluencers extends AbstractEndpoint
         }
         $job_id = $this->job_id;
 
-        if (isset($job_id)) {
-            return "/_xpack/ml/anomaly_detectors/$job_id/results/influencers";
-        }
+        return "/_xpack/ml/anomaly_detectors/$job_id/results/influencers";
     }
 
     public function getParamWhitelist(): array

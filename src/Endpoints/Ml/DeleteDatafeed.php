@@ -26,9 +26,7 @@ class DeleteDatafeed extends AbstractEndpoint
         }
         $datafeed_id = $this->datafeed_id;
 
-        if (isset($datafeed_id)) {
-            return "/_xpack/ml/datafeeds/$datafeed_id";
-        }
+        return "/_xpack/ml/datafeeds/$datafeed_id";
     }
 
     public function getParamWhitelist(): array

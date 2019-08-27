@@ -27,12 +27,10 @@ class GetCategories extends AbstractEndpoint
         $job_id = $this->job_id;
         $category_id = $this->category_id ?? null;
 
-        if (isset($job_id) && isset($category_id)) {
+        if (isset($category_id)) {
             return "/_xpack/ml/anomaly_detectors/$job_id/results/categories/$category_id";
         }
-        if (isset($job_id)) {
-            return "/_xpack/ml/anomaly_detectors/$job_id/results/categories/";
-        }
+        return "/_xpack/ml/anomaly_detectors/$job_id/results/categories/";
     }
 
     public function getParamWhitelist(): array

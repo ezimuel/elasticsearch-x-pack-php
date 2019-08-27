@@ -29,9 +29,7 @@ class GetJobs extends AbstractEndpoint
 
     public function getParamWhitelist(): array
     {
-        return [
-            
-        ];
+        return [];
     }
 
     public function getMethod(): string

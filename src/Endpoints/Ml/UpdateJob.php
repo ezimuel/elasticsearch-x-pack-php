@@ -26,16 +26,12 @@ class UpdateJob extends AbstractEndpoint
         }
         $job_id = $this->job_id;
 
-        if (isset($job_id)) {
-            return "/_xpack/ml/anomaly_detectors/$job_id/_update";
-        }
+        return "/_xpack/ml/anomaly_detectors/$job_id/_update";
     }
 
     public function getParamWhitelist(): array
     {
-        return [
-            
-        ];
+        return [];
     }
 
     public function getMethod(): string

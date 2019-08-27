@@ -32,16 +32,12 @@ class DeleteCalendarEvent extends AbstractEndpoint
         }
         $event_id = $this->event_id;
 
-        if (isset($calendar_id) && isset($event_id)) {
-            return "/_xpack/ml/calendars/$calendar_id/events/$event_id";
-        }
+        return "/_xpack/ml/calendars/$calendar_id/events/$event_id";
     }
 
     public function getParamWhitelist(): array
     {
-        return [
-            
-        ];
+        return [];
     }
 
     public function getMethod(): string

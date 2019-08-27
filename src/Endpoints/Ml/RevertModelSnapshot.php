@@ -32,9 +32,7 @@ class RevertModelSnapshot extends AbstractEndpoint
         }
         $snapshot_id = $this->snapshot_id;
 
-        if (isset($job_id) && isset($snapshot_id)) {
-            return "/_xpack/ml/anomaly_detectors/$job_id/model_snapshots/$snapshot_id/_revert";
-        }
+        return "/_xpack/ml/anomaly_detectors/$job_id/model_snapshots/$snapshot_id/_revert";
     }
 
     public function getParamWhitelist(): array

@@ -26,16 +26,12 @@ class PutFilter extends AbstractEndpoint
         }
         $filter_id = $this->filter_id;
 
-        if (isset($filter_id)) {
-            return "/_xpack/ml/filters/$filter_id";
-        }
+        return "/_xpack/ml/filters/$filter_id";
     }
 
     public function getParamWhitelist(): array
     {
-        return [
-            
-        ];
+        return [];
     }
 
     public function getMethod(): string

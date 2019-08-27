@@ -26,16 +26,12 @@ class DeleteJob extends AbstractEndpoint
         }
         $id = $this->id;
 
-        if (isset($id)) {
-            return "/_xpack/rollup/job/$id";
-        }
+        return "/_xpack/rollup/job/$id";
     }
 
     public function getParamWhitelist(): array
     {
-        return [
-            
-        ];
+        return [];
     }
 
     public function getMethod(): string

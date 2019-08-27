@@ -26,9 +26,7 @@ class StartDatafeed extends AbstractEndpoint
         }
         $datafeed_id = $this->datafeed_id;
 
-        if (isset($datafeed_id)) {
-            return "/_xpack/ml/datafeeds/$datafeed_id/_start";
-        }
+        return "/_xpack/ml/datafeeds/$datafeed_id/_start";
     }
 
     public function getParamWhitelist(): array

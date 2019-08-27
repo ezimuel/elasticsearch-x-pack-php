@@ -1,0 +1,19 @@
+    /**
+     * Endpoint: :endpoint
+     *
+     * @see :url_doc
+     :params
+     * @return callable|array
+     */
+    public function :endpoint(array $params = [])
+    {
+        $index = $this->extractArgument($params, 'index');
+
+        $endpointBuilder = $this->endpoints;
+
+        $endpoint = $endpointBuilder(':endpoint_class');
+        $endpoint->setIndex($index);
+        $endpoint->setParams($params);
+
+        return $this->performRequest($endpoint);
+    }

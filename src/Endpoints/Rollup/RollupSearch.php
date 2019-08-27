@@ -27,19 +27,15 @@ class RollupSearch extends AbstractEndpoint
         $index = $this->index;
         $type = $this->type ?? null;
 
-        if (isset($index) && isset($type)) {
+        if (isset($type)) {
             return "$index/$type/_rollup_search";
         }
-        if (isset($index)) {
-            return "$index/_rollup_search";
-        }
+        return "$index/_rollup_search";
     }
 
     public function getParamWhitelist(): array
     {
-        return [
-            
-        ];
+        return [];
     }
 
     public function getMethod(): string

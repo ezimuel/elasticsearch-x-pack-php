@@ -26,9 +26,7 @@ class CloseJob extends AbstractEndpoint
         }
         $job_id = $this->job_id;
 
-        if (isset($job_id)) {
-            return "/_xpack/ml/anomaly_detectors/$job_id/_close";
-        }
+        return "/_xpack/ml/anomaly_detectors/$job_id/_close";
     }
 
     public function getParamWhitelist(): array

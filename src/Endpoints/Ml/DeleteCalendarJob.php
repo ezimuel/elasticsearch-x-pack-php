@@ -32,16 +32,12 @@ class DeleteCalendarJob extends AbstractEndpoint
         }
         $job_id = $this->job_id;
 
-        if (isset($calendar_id) && isset($job_id)) {
-            return "/_xpack/ml/calendars/$calendar_id/jobs/$job_id";
-        }
+        return "/_xpack/ml/calendars/$calendar_id/jobs/$job_id";
     }
 
     public function getParamWhitelist(): array
     {
-        return [
-            
-        ];
+        return [];
     }
 
     public function getMethod(): string

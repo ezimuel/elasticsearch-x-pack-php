@@ -26,9 +26,7 @@ class DeleteRole extends AbstractEndpoint
         }
         $name = $this->name;
 
-        if (isset($name)) {
-            return "/_xpack/security/role/$name";
-        }
+        return "/_xpack/security/role/$name";
     }
 
     public function getParamWhitelist(): array

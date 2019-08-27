@@ -26,16 +26,12 @@ class PutJob extends AbstractEndpoint
         }
         $job_id = $this->job_id;
 
-        if (isset($job_id)) {
-            return "/_xpack/ml/anomaly_detectors/$job_id";
-        }
+        return "/_xpack/ml/anomaly_detectors/$job_id";
     }
 
     public function getParamWhitelist(): array
     {
-        return [
-            
-        ];
+        return [];
     }
 
     public function getMethod(): string

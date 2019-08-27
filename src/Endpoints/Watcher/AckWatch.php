@@ -27,12 +27,10 @@ class AckWatch extends AbstractEndpoint
         $watch_id = $this->watch_id;
         $action_id = $this->action_id ?? null;
 
-        if (isset($watch_id) && isset($action_id)) {
+        if (isset($action_id)) {
             return "/_xpack/watcher/watch/$watch_id/_ack/$action_id";
         }
-        if (isset($watch_id)) {
-            return "/_xpack/watcher/watch/$watch_id/_ack";
-        }
+        return "/_xpack/watcher/watch/$watch_id/_ack";
     }
 
     public function getParamWhitelist(): array

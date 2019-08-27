@@ -27,12 +27,10 @@ class GetModelSnapshots extends AbstractEndpoint
         $job_id = $this->job_id;
         $snapshot_id = $this->snapshot_id ?? null;
 
-        if (isset($job_id) && isset($snapshot_id)) {
+        if (isset($snapshot_id)) {
             return "/_xpack/ml/anomaly_detectors/$job_id/model_snapshots/$snapshot_id";
         }
-        if (isset($job_id)) {
-            return "/_xpack/ml/anomaly_detectors/$job_id/model_snapshots";
-        }
+        return "/_xpack/ml/anomaly_detectors/$job_id/model_snapshots";
     }
 
     public function getParamWhitelist(): array

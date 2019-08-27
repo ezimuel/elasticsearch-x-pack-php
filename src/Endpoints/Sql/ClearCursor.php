@@ -25,9 +25,7 @@ class ClearCursor extends AbstractEndpoint
 
     public function getParamWhitelist(): array
     {
-        return [
-            
-        ];
+        return [];
     }
 
     public function getMethod(): string

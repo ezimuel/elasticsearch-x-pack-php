@@ -26,9 +26,7 @@ class GetOverallBuckets extends AbstractEndpoint
         }
         $job_id = $this->job_id;
 
-        if (isset($job_id)) {
-            return "/_xpack/ml/anomaly_detectors/$job_id/results/overall_buckets";
-        }
+        return "/_xpack/ml/anomaly_detectors/$job_id/results/overall_buckets";
     }
 
     public function getParamWhitelist(): array

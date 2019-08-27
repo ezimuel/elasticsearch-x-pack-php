@@ -26,9 +26,7 @@ class DeleteWatch extends AbstractEndpoint
         }
         $id = $this->id;
 
-        if (isset($id)) {
-            return "/_xpack/watcher/watch/$id";
-        }
+        return "/_xpack/watcher/watch/$id";
     }
 
     public function getParamWhitelist(): array

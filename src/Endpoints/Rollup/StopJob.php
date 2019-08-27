@@ -26,16 +26,12 @@ class StopJob extends AbstractEndpoint
         }
         $id = $this->id;
 
-        if (isset($id)) {
-            return "/_xpack/rollup/job/$id/_stop";
-        }
+        return "/_xpack/rollup/job/$id/_stop";
     }
 
     public function getParamWhitelist(): array
     {
-        return [
-            
-        ];
+        return [];
     }
 
     public function getMethod(): string

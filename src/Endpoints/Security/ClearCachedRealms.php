@@ -26,9 +26,7 @@ class ClearCachedRealms extends AbstractEndpoint
         }
         $realms = $this->realms;
 
-        if (isset($realms)) {
-            return "/_xpack/security/realm/$realms/_clear_cache";
-        }
+        return "/_xpack/security/realm/$realms/_clear_cache";
     }
 
     public function getParamWhitelist(): array

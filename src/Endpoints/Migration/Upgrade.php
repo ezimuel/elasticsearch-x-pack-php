@@ -26,9 +26,7 @@ class Upgrade extends AbstractEndpoint
         }
         $index = $this->index;
 
-        if (isset($index)) {
-            return "/_xpack/migration/upgrade/$index";
-        }
+        return "/_xpack/migration/upgrade/$index";
     }
 
     public function getParamWhitelist(): array

@@ -26,9 +26,7 @@ class GetRecords extends AbstractEndpoint
         }
         $job_id = $this->job_id;
 
-        if (isset($job_id)) {
-            return "/_xpack/ml/anomaly_detectors/$job_id/results/records";
-        }
+        return "/_xpack/ml/anomaly_detectors/$job_id/results/records";
     }
 
     public function getParamWhitelist(): array

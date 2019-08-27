@@ -26,9 +26,7 @@ class DeleteUser extends AbstractEndpoint
         }
         $username = $this->username;
 
-        if (isset($username)) {
-            return "/_xpack/security/user/$username";
-        }
+        return "/_xpack/security/user/$username";
     }
 
     public function getParamWhitelist(): array

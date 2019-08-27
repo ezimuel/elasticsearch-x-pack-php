@@ -28,16 +28,12 @@ class OpenJob extends AbstractEndpoint
         $ignore_downtime = $this->ignore_downtime ?? null;
         $timeout = $this->timeout ?? null;
 
-        if (isset($job_id)) {
-            return "/_xpack/ml/anomaly_detectors/$job_id/_open";
-        }
+        return "/_xpack/ml/anomaly_detectors/$job_id/_open";
     }
 
     public function getParamWhitelist(): array
     {
-        return [
-            
-        ];
+        return [];
     }
 
     public function getMethod(): string

@@ -10,12 +10,13 @@ use GitWrapper\GitWrapper;
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
+$start = microtime(true);
 if (!isset($argv[1])) {
     print_usage_msg();
     exit(1);
 }
 if ($argv[1] < '6.3.0') {
-    printf("Error: the version must be > 6.3.0\n");
+    printf("Error: the version must be >= 6.3.0\n");
     exit(1);
 }
 
@@ -40,6 +41,8 @@ $result = $git->run(
 $files = explode("\n", $result);
 
 $endpointDir = __DIR__ . '/../src/Endpoints/';
+$namespaces = [];
+$count = 0;
 
 foreach ($files as $file) {
     if (empty($file)) {
@@ -55,8 +58,12 @@ foreach ($files as $file) {
         $endpoint = $parts[2];
     }
 
+    if ($namespace !== '') {
+        $namespaces[$namespace][] = $endpoint;
+    }
+
     try {
-        printf("Reading %s\n", $file);
+        printf("Generating %s ...", basename($file));
 
         $json = json_decode(
             $git->run('show', [':' . trim($file)]),
@@ -69,9 +76,7 @@ foreach ($files as $file) {
         exit(1);
     }
 
-    printf("Generating class Elasticsearch\Endpoints\%s\\%s...", ucfirst($namespace), getClassName($endpoint));
-
-    $class = file_get_contents(__DIR__ . '/skeleton/class');
+    $class = file_get_contents(__DIR__ . '/skeleton/endpoint-class');
 
     $key = $namespace === '' ? "xpack.$endpoint" : "xpack.$namespace.$endpoint";
 
@@ -91,11 +96,13 @@ foreach ($files as $file) {
     if (!empty($json[$key]['body'])) {
         $parts .= getSetPart('body', ucfirst($endpoint));
     }
-    foreach ($json[$key]['url']['parts'] as $part => $value) {
-        if (in_array($part, ['type', 'index'])) {
-            continue;
+    if (isset($json[$key]['url']['parts'])) {
+        foreach ($json[$key]['url']['parts'] as $part => $value) {
+            if (in_array($part, ['type', 'index'])) {
+                continue;
+            }
+            $parts .= getSetPart($part, ucfirst($endpoint));
         }
-        $parts .= getSetPart($part, ucfirst($endpoint));
     }
     $class = str_replace(':set-parts', $parts, $class);
 
@@ -108,7 +115,12 @@ foreach ($files as $file) {
     file_put_contents($dir . '/' . getClassName($endpoint) . '.php', $class);
 
     printf(" done\n");
+    $count++;
 }
+$end = microtime(true);
+
+printf("\nGenerated %d endpoints in %.3f seconds\n.", $count, $end - $start);
+var_dump($namespaces);
 
 function print_usage_msg(): void
 {
@@ -121,12 +133,12 @@ function extractParameters(array $json): string
     if (!isset($json['url']['params'])) {
         return '';
     }
-    $tab = str_repeat(' ', 12);
+    $tab = str_repeat(' ', 4);
     $result = '';
     foreach (array_keys($json['url']['params']) as $param) {
-        $result .=  "'$param'," . "\n" . $tab;
+        $result .=  "'$param'," . "\n" . $tab . $tab . $tab;
     }
-    return rtrim(trim($result), ',');
+    return "\n". $tab . $tab . $tab . rtrim(trim($result), ',') . "\n". $tab . $tab;
 }
 
 function extractUrl(array $json, string $endpoint): string
@@ -135,16 +147,20 @@ function extractUrl(array $json, string $endpoint): string
     $checkPart = '';
     $params = '';
     $tab = str_repeat(' ', 4);
+    $required = [];
 
-    foreach ($json['parts'] as $part => $value) {
-        if (isset($value['required']) && $value['required']) {
-            $checkPart .= str_replace(
-                ':endpoint',
-                $endpoint,
-                str_replace(':part', $part, $skeleton)
-            );
-        } else {
-            $params .= sprintf("%s\$%s = \$this->%s ?? null;\n", $tab.$tab, $part, $part);
+    if (isset($json['parts'])) {
+        foreach ($json['parts'] as $part => $value) {
+            if (isset($value['required']) && $value['required']) {
+                $required[] = $part;
+                $checkPart .= str_replace(
+                    ':endpoint',
+                    $endpoint,
+                    str_replace(':part', $part, $skeleton)
+                );
+            } else {
+                $params .= sprintf("%s\$%s = \$this->%s ?? null;\n", $tab.$tab, $part, $part);
+            }
         }
     }
     $else = '';
@@ -157,13 +173,23 @@ function extractUrl(array $json, string $endpoint): string
             $else = sprintf("\n%sreturn \"%s\";", $tab.$tab, $path);
             continue;
         }
-        $check = sprintf("isset(\$%s)", $parts[0]);
+        $check = '';
+        if (!in_array($parts[0], $required)) {
+            $check = sprintf("isset(\$%s)", $parts[0]);
+        }
         $url = str_replace('{' . $parts[0] .'}', '$' . $parts[0], $path);
         for ($i=1; $i<count($parts); $i++) {
-            $check .= sprintf(" && isset(\$%s)", $parts[$i]);
-            $url =  str_replace('{' . $parts[$i] .'}', '$' . $parts[$i], $url);
+            $url = str_replace('{' . $parts[$i] .'}', '$' . $parts[$i], $url);
+            if (in_array($parts[$i], $required)) {
+                continue;
+            }
+            $check .= sprintf("%sisset(\$%s)", empty($check) ? '' : ' && ', $parts[$i]);
         }
-        $urls .= sprintf("\n%sif (%s) {\n%sreturn \"%s\";\n%s}", $tab.$tab, $check, $tab.$tab.$tab, $url, $tab.$tab);
+        if (empty($check)) {
+            $urls .= sprintf("\n%sreturn \"%s\";", $tab.$tab, $url);
+        } else {
+            $urls .= sprintf("\n%sif (%s) {\n%sreturn \"%s\";\n%s}", $tab.$tab, $check, $tab.$tab.$tab, $url, $tab.$tab);
+        }
     }
     return $checkPart . $params . $urls . $else;
 }

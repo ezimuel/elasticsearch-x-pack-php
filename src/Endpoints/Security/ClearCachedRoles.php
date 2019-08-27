@@ -26,9 +26,7 @@ class ClearCachedRoles extends AbstractEndpoint
         }
         $name = $this->name;
 
-        if (isset($name)) {
-            return "/_xpack/security/role/$name/_clear_cache";
-        }
+        return "/_xpack/security/role/$name/_clear_cache";
     }
 
     public function getParamWhitelist(): array
