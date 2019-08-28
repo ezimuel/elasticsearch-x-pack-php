@@ -23,13 +23,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Elasticsearch\\": "src/"
+            "Elasticsearch\\XPack\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Elasticsearch\\Tests\\": "tests/unit",
-            "Elasticsearch\\IntegrationTests\\": "tests/integration"
+            "Elasticsearch\\XPack\\Tests\\": "tests/unit",
+            "Elasticsearch\\XPack\\IntegrationTests\\": "tests/integration",
+            "Elasticsearch\\XPack\\Util\\" : "util/"
         }
     }
 }

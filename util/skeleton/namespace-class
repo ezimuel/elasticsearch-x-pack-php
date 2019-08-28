@@ -1,13 +1,15 @@
 <?php
 declare(strict_types = 1);
 
-namespace Elasticsearch\Namespaces;
+namespace Elasticsearch\XPack\Namespaces;
+
+use Elasticsearch\Namespaces\AbstractNamespace;
 
 /**
  * Class :namespace
  *
  * @category Elasticsearch
- * @package  Elasticsearch\Namespaces
+ * @package  Elasticsearch\XPack\Namespaces
  * @author   Enrico Zimuel <enrico.zimuel@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
