@@ -15,11 +15,14 @@ class Endpoint
     public $name;
     public $apiName;
     protected $content;
+    protected $version;
 
     /**
-     * Get the filename ($file) and the content in json ($content)
+     * @param $fileName name of the file with the API specification
+     * @param $content content of the API specification in JSON
+     * @param $version Elasticsearch version of the API specification
      */
-    public function __construct(string $fileName, string $content)
+    public function __construct(string $fileName, string $content, string $version)
     {
         $this->apiName = basename($fileName, '.json');
         $parts = explode('.', $fileName);
@@ -44,6 +47,7 @@ class Endpoint
             ));
         }
         $this->content = $this->content[$this->apiName];
+        $this->version = $version;
     }
 
     public function getParts(): array
@@ -103,8 +107,15 @@ class Endpoint
             }
         }
         $class = str_replace(':set-parts', $parts, $class);
+        $class = str_replace(':endpoint', $this->getClassName(), $class);
 
-        return str_replace(':endpoint', $this->getClassName(), $class);
+        $class = str_replace(':version', $this->version, $class);
+        return str_replace(':apiname', $this->apiName, $class);
+    }
+
+    public function getMethod(): array
+    {
+        return $this->content['methods'];
     }
 
     private function extractParameters(): string

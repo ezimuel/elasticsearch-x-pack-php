@@ -9,16 +9,19 @@ class NamespaceEndpoint
 {
     const NAMESPACE_CLASS_TEMPLATE = __DIR__ . '/skeleton/namespace-class';
     const ENDPOINT_FUNCTION_TEMPLATE = __DIR__ . '/skeleton/endpoint-function';
+    const ENDPOINT_FUNCTION_BOOL_TEMPLATE = __DIR__ . '/skeleton/endpoint-function-bool';
     const EXTRACT_ARG_TEMPLATE = __DIR__ . '/skeleton/extract-arg';
     const SET_PARAM_TEMPLATE = __DIR__ . '/skeleton/setparam';
 
     protected $name;
     protected $endpoints = [];
     protected $endpointNames = [];
+    protected $version; /* Elasticsearch version used to generate the class */
 
-    public function __construct(string $name)
+    public function __construct(string $name, string $version)
     {
         $this->name = $name;
+        $this->version = $version;
     }
 
     public function renderClass(): string
@@ -34,7 +37,8 @@ class NamespaceEndpoint
             $endpoints .= $this->renderEndpoint($endpoint);
         }
         $class = str_replace(':endpoints', $endpoints, $class);
-        return $class;
+
+        return str_replace(':version', $this->version, $class);
     }
 
     public function addEndpoint(Endpoint $endpoint): NamespaceEndpoint
@@ -53,10 +57,21 @@ class NamespaceEndpoint
 
     private function renderEndpoint(Endpoint $endpoint): string
     {
-        $code = file_get_contents(self::ENDPOINT_FUNCTION_TEMPLATE);
+        $code = file_get_contents(
+            $endpoint->getMethod() === ['HEAD']
+            ? self::ENDPOINT_FUNCTION_BOOL_TEMPLATE
+            : self::ENDPOINT_FUNCTION_TEMPLATE
+        );
 
         $code = str_replace(':apidoc', $endpoint->renderDocParams(), $code);
-        $code = str_replace(':endpoint', $endpoint->name, $code);
+        $lowerCamelCase = preg_replace_callback(
+            '/_(.?)/',
+            function($matches){
+                return strtoupper($matches[1]);
+            },
+            $endpoint->name
+        );
+        $code = str_replace(':endpoint', $lowerCamelCase, $code);
         $extract = '';
         $setParams = '';
         foreach ($endpoint->getParts() as $part) {
@@ -73,12 +88,12 @@ class NamespaceEndpoint
         }
         $code = str_replace(':extract', $extract, $code);
         $code = str_replace(':setparam', $setParams, $code);
-        
+
         if (empty($endpoint->namespace)) {
             $endpointClass = 'XPack\\' . $endpoint->getClassName();
         } else {
             $endpointClass = 'XPack\\' . ucfirst($endpoint->namespace) . '\\' . $endpoint->getClassName();
         }
-        return str_replace(':endpointclass', $endpointClass, $code);
+        return str_replace(':EndpointClass', $endpointClass, $code);
     }
 }

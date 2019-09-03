@@ -1,59 +1,57 @@
 <?php
-namespace XPack;
-use XPack\Graph\GraphNamespaceBuilder;
-use XPack\License\LicenseNamespaceBuilder;
-use XPack\Monitoring\MonitoringNamespaceBuilder;
-use XPack\Security\SecurityNamespaceBuilder;
-use XPack\Watcher\WatcherNamespaceBuilder;
+declare(strict_types = 1);
+
+namespace Elasticsearch;
+
+use Elasticsearch\Namespaces\AbstractNamespace;
+use Elasticsearch\Namespaces\NamespaceBuilderInterface;
+use Elasticsearch\Namespaces\XPack\GraphNamespace;
+use Elasticsearch\Namespaces\XPack\LicenseNamespace;
+use Elasticsearch\Namespaces\XPack\MigrationNamespace;
+use Elasticsearch\Namespaces\XPack\MlNamespace;
+use Elasticsearch\Namespaces\XPack\MonitoringNamespace;
+use Elasticsearch\Namespaces\XPack\RollupNamespace;
+use Elasticsearch\Namespaces\XPack\SecurityNamespace;
+use Elasticsearch\Namespaces\XPack\SqlNamespace;
+use Elasticsearch\Namespaces\XPack\SslNamespace;
+use Elasticsearch\Namespaces\XPack\WatcherNamespace;
+use Elasticsearch\Serializers\SerializerInterface;
+use Elasticsearch\Transport;
 
 /**
  * Class XPack
  *
- * @category XPack
- * @package  XPack\Watcher\WatcherNamespace
- * @author   Zachary Tong <zach@elastic.co>
+ * @category Elasticsearch
+ * @package  Elasticsearch
+ * @author   Enrico Zimuel <enrico.zimuel@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
  */
-class XPack
+class XPack implements NamespaceBuilderInterface
 {
-    /**
-     * @return WatcherNamespaceBuilder
-     */
-    public static function Watcher()
+    public function getName(): string
     {
-        return new WatcherNamespaceBuilder();
+        return 'xpack';
     }
 
-    /**
-     * @return GraphNamespaceBuilder
-     */
-    public static function Graph()
+    public function getObject(Transport $transport, SerializerInterface $serializer)
     {
-        return new GraphNamespaceBuilder();
-    }
+        return new class($transport, $serializer) extends AbstractNamespace {
+            use XPackTrait;
 
-    /**
-     * @return LicenseNamespaceBuilder
-     */
-    public static function License()
-    {
-        return new LicenseNamespaceBuilder();
-    }
-
-    /**
-     * @return MonitoringNamespaceBuilder
-     */
-    public static function Monitoring()
-    {
-        return new MonitoringNamespaceBuilder();
-    }
-
-    /**
-     * @return SecurityNamespaceBuilder
-     */
-    public static function Security()
-    {
-        return new SecurityNamespaceBuilder();
+            public function __construct(Transport $transport, SerializerInterface $serializer)
+            {
+                $this->graph      = new GraphNamespace($transport, $endpoint);
+                $this->license    = new LicenseNamespace($transport, $endpoint);
+                $this->migration  = new MigrationNamespace($transport, $endpoint);
+                $this->ml         = new MlNamespace($transport, $endpoint);
+                $this->monitoring = new MonitoringNamespace($transport, $endpoint);
+                $this->rollup     = new RollupNamespace($transport, $endpoint);
+                $this->security   = new SecurityNamespace($transport, $endpoint);
+                $this->sql        = new SqlNamespace($transport, $endpoint);
+                $this->ssl        = new SslNamespace($transport, $endpoint);
+                $this->watcher    = new WatcherNamespace($transport, $endpoint);
+            }
+        };
     }
 }

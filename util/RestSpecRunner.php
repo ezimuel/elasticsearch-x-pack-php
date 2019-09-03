@@ -1,9 +1,5 @@
 <?php
-/**
- * User: zach
- * Date: 3/5/14
- * Time: 10:41 AM
- */
+declare(strict_types = 1);
 
 error_reporting(E_ALL | E_STRICT);
 
@@ -19,20 +15,23 @@ if (!file_exists(dirname(__DIR__) . '/composer.lock')) {
 
 echo "Base directory: ". dirname(__DIR__)."\n";
 
-// Include the composer autoloader
 $autoloader = require_once(dirname(__DIR__) . '/vendor/autoload.php');
 
+$host = $_ENV['ES_TEST_HOST'] ?? 'localhost:9200';
+
+$client = \Elasticsearch\ClientBuilder::fromConfig([
+	'hosts' => [$host]
+]);
+$serverInfo = $client->info();
+var_dump($serverInfo);
 
 $gitWrapper = new \GitWrapper\GitWrapper();
-echo "Git cwd: ".dirname(__DIR__) . "/util/elasticsearch-watcher\n";
-$git = $gitWrapper->workingCopy(dirname(__DIR__) . '/util/elasticsearch-watcher');
+echo "Git cwd: ".dirname(__DIR__) . "/util/elasticsearch\n";
+$git = $gitWrapper->workingCopy(dirname(__DIR__) . '/util/elasticsearch');
 
-
-
-echo "Update elasticsearch-watcher submodule\n";
+echo "Update elasticsearch submodule\n";
 $git->fetchAll(array('verbose' => true));
 
-
-$hash = $_SERVER['TEST_BUILD_REF'];
+$hash = $serverInfo['version']['build_hash'];
 echo "Checkout yaml tests (hash: $hash)\n";
 $git->checkout($hash, array('force' => true, 'quiet' => true));

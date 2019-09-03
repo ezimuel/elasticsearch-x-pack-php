@@ -22,7 +22,8 @@ if ($argv[1] < '6.3.0') {
     exit(1);
 }
 
-$version = 'v' . $argv[1];
+$ver = $argv[1];
+$version = 'v' . $ver;
 
 $gitWrapper = new GitWrapper();
 $git = $gitWrapper->workingCopy(dirname(__DIR__) . '/util/elasticsearch');
@@ -42,7 +43,7 @@ $result = $git->run(
 );
 $files = explode("\n", $result);
 
-$endpointDir = __DIR__ . '/../src/Endpoints/';
+$endpointDir = __DIR__ . '/../src/Endpoints/XPack/';
 $countEndpoint = 0;
 $namespaces = [];
 
@@ -53,7 +54,7 @@ foreach ($files as $file) {
     }
     printf("Generation %s...", basename($file));
 
-    $endpoint = new Endpoint($file, $git->run('show', [':' . trim($file)]));
+    $endpoint = new Endpoint($file, $git->run('show', [':' . trim($file)]), $ver);
 
     $dir = $endpointDir . ucfirst($endpoint->namespace);
     if (!file_exists($dir)) {
@@ -71,15 +72,15 @@ foreach ($files as $file) {
 }
 
 // Generate namespaces
-$namespaceDir = __DIR__ . '/../src/Namespaces';
+$namespaceDir = __DIR__ . '/../src/Namespaces/XPack/';
 $countNamespace = 0;
 foreach ($namespaces as $name => $endpoints) {
-    $namespace = new NamespaceEndpoint($name);
+    $namespace = new NamespaceEndpoint($name, $ver);
     foreach ($endpoints as $ep) {
         $namespace->addEndpoint($ep);
     }
     file_put_contents(
-        $namespaceDir . '/' . ucfirst($name) . 'Namespace.php',
+        $namespaceDir . ucfirst($name) . 'Namespace.php',
         $namespace->renderClass()
     );
     $countNamespace++;
