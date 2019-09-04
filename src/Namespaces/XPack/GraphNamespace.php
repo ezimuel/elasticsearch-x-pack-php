@@ -17,7 +17,7 @@ use Elasticsearch\Namespaces\AbstractNamespace;
  */
 class GraphNamespace extends AbstractNamespace
 {
-        /**
+    /**
      * Endpoint: xpack.graph.explore
      *
      * @see https://www.elastic.co/guide/en/elasticsearch/reference/current/graph-explore-api.html

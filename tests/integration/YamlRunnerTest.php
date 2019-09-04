@@ -14,7 +14,7 @@ use Elasticsearch\Common\Exceptions\RequestTimeout408Exception;
 use Elasticsearch\Common\Exceptions\ServerErrorResponseException;
 use Elasticsearch\Common\Exceptions\RoutingMissingException;
 use Elasticsearch\Common\Exceptions\Unauthorized401Exception;
-use Elasticsearch\XPack;
+use Elasticsearch\Namespaces\XPack\XPackNamespace;
 use GuzzleHttp\Ring\Future\FutureArrayInterface;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
@@ -127,7 +127,7 @@ class YamlRunnerTest extends \PHPUnit\Framework\TestCase
     public function setUp()
     {
         $this->client = Elasticsearch\ClientBuilder::create()
-            ->registerNamespace(XPack::class)
+            ->registerNamespace(new XPackNamespace)
             ->setHosts([self::getHost()])
             ->build();
     }
