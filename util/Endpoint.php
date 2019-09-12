@@ -194,18 +194,23 @@ class Endpoint
         return $match[1];
     }
 
-    private function getSetPart(string $part): string
+    private function getSetPart(string $param): string
     {
         $setPart = file_get_contents(self::SET_PART_TEMPLATE);
         $setPart = str_replace(':endpoint', $this->getClassName(), $setPart);
-        $setPart = str_replace(':part', $part, $setPart);
+        $setPart = str_replace(':part', $param, $setPart);
 
-        return str_replace(':Part', $this->getClassName(), $setPart);
+        return str_replace(':Part', $this->normalizeName($param), $setPart);
+    }
+
+    protected function normalizeName(string $name): string
+    {
+        return str_replace('_', '', ucwords($name, '_'));
     }
 
     public function getClassName(): string
     {
-        return str_replace('_', '', ucwords($this->name, '_'));
+        return $this->normalizeName($this->name);
     }
 
     public function renderDocParams(): string

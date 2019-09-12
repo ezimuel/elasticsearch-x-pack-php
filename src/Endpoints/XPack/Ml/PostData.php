@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class PostData
  * Elasticsearch API name xpack.ml.post_data
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -43,7 +43,7 @@ class PostData extends AbstractEndpoint
         return 'POST';
     }
     
-    public function setPostData($body): PostData
+    public function setBody($body): PostData
     {
         if (isset($body) !== true) {
             return $this;
@@ -53,7 +53,7 @@ class PostData extends AbstractEndpoint
         return $this;
     }
 
-    public function setPostData($job_id): PostData
+    public function setJobId($job_id): PostData
     {
         if (isset($job_id) !== true) {
             return $this;

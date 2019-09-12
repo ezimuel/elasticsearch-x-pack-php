@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class GetUser
  * Elasticsearch API name xpack.security.get_user
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Security
@@ -40,7 +40,7 @@ class GetUser extends AbstractEndpoint
         return 'GET';
     }
     
-    public function setGetUser($username): GetUser
+    public function setUsername($username): GetUser
     {
         if (isset($username) !== true) {
             return $this;

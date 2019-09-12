@@ -7,7 +7,7 @@ use Elasticsearch\Namespaces\AbstractNamespace;
 
 /**
  * Class MlNamespace
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Namespaces\XPack
@@ -33,10 +33,9 @@ class MlNamespace extends AbstractNamespace
     {
         $job_id = $this->extractArgument($params, 'job_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\CloseJob');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\CloseJob;
         $endpoint->setParams($params);
-        $endpoint->setJob_id($job_id);
+        $endpoint->setJobId($job_id);
 
         return $this->performRequest($endpoint);
     }
@@ -50,10 +49,9 @@ class MlNamespace extends AbstractNamespace
     {
         $calendar_id = $this->extractArgument($params, 'calendar_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\DeleteCalendar');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\DeleteCalendar;
         $endpoint->setParams($params);
-        $endpoint->setCalendar_id($calendar_id);
+        $endpoint->setCalendarId($calendar_id);
 
         return $this->performRequest($endpoint);
     }
@@ -69,11 +67,10 @@ class MlNamespace extends AbstractNamespace
         $calendar_id = $this->extractArgument($params, 'calendar_id');
         $event_id = $this->extractArgument($params, 'event_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\DeleteCalendarEvent');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\DeleteCalendarEvent;
         $endpoint->setParams($params);
-        $endpoint->setCalendar_id($calendar_id);
-        $endpoint->setEvent_id($event_id);
+        $endpoint->setCalendarId($calendar_id);
+        $endpoint->setEventId($event_id);
 
         return $this->performRequest($endpoint);
     }
@@ -89,11 +86,10 @@ class MlNamespace extends AbstractNamespace
         $calendar_id = $this->extractArgument($params, 'calendar_id');
         $job_id = $this->extractArgument($params, 'job_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\DeleteCalendarJob');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\DeleteCalendarJob;
         $endpoint->setParams($params);
-        $endpoint->setCalendar_id($calendar_id);
-        $endpoint->setJob_id($job_id);
+        $endpoint->setCalendarId($calendar_id);
+        $endpoint->setJobId($job_id);
 
         return $this->performRequest($endpoint);
     }
@@ -111,10 +107,9 @@ class MlNamespace extends AbstractNamespace
     {
         $datafeed_id = $this->extractArgument($params, 'datafeed_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\DeleteDatafeed');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\DeleteDatafeed;
         $endpoint->setParams($params);
-        $endpoint->setDatafeed_id($datafeed_id);
+        $endpoint->setDatafeedId($datafeed_id);
 
         return $this->performRequest($endpoint);
     }
@@ -124,8 +119,7 @@ class MlNamespace extends AbstractNamespace
     public function deleteExpiredData(array $params = [])
     {
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\DeleteExpiredData');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\DeleteExpiredData;
         $endpoint->setParams($params);
 
         return $this->performRequest($endpoint);
@@ -140,10 +134,9 @@ class MlNamespace extends AbstractNamespace
     {
         $filter_id = $this->extractArgument($params, 'filter_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\DeleteFilter');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\DeleteFilter;
         $endpoint->setParams($params);
-        $endpoint->setFilter_id($filter_id);
+        $endpoint->setFilterId($filter_id);
 
         return $this->performRequest($endpoint);
     }
@@ -161,10 +154,9 @@ class MlNamespace extends AbstractNamespace
     {
         $job_id = $this->extractArgument($params, 'job_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\DeleteJob');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\DeleteJob;
         $endpoint->setParams($params);
-        $endpoint->setJob_id($job_id);
+        $endpoint->setJobId($job_id);
 
         return $this->performRequest($endpoint);
     }
@@ -183,11 +175,10 @@ class MlNamespace extends AbstractNamespace
         $job_id = $this->extractArgument($params, 'job_id');
         $snapshot_id = $this->extractArgument($params, 'snapshot_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\DeleteModelSnapshot');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\DeleteModelSnapshot;
         $endpoint->setParams($params);
-        $endpoint->setJob_id($job_id);
-        $endpoint->setSnapshot_id($snapshot_id);
+        $endpoint->setJobId($job_id);
+        $endpoint->setSnapshotId($snapshot_id);
 
         return $this->performRequest($endpoint);
     }
@@ -211,10 +202,9 @@ class MlNamespace extends AbstractNamespace
         $job_id = $this->extractArgument($params, 'job_id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\FlushJob');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\FlushJob;
         $endpoint->setParams($params);
-        $endpoint->setJob_id($job_id);
+        $endpoint->setJobId($job_id);
         $endpoint->setBody($body);
 
         return $this->performRequest($endpoint);
@@ -231,10 +221,9 @@ class MlNamespace extends AbstractNamespace
     {
         $job_id = $this->extractArgument($params, 'job_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\Forecast');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\Forecast;
         $endpoint->setParams($params);
-        $endpoint->setJob_id($job_id);
+        $endpoint->setJobId($job_id);
 
         return $this->performRequest($endpoint);
     }
@@ -264,10 +253,9 @@ class MlNamespace extends AbstractNamespace
         $timestamp = $this->extractArgument($params, 'timestamp');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\GetBuckets');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\GetBuckets;
         $endpoint->setParams($params);
-        $endpoint->setJob_id($job_id);
+        $endpoint->setJobId($job_id);
         $endpoint->setTimestamp($timestamp);
         $endpoint->setBody($body);
 
@@ -288,10 +276,9 @@ class MlNamespace extends AbstractNamespace
     {
         $calendar_id = $this->extractArgument($params, 'calendar_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\GetCalendarEvents');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\GetCalendarEvents;
         $endpoint->setParams($params);
-        $endpoint->setCalendar_id($calendar_id);
+        $endpoint->setCalendarId($calendar_id);
 
         return $this->performRequest($endpoint);
     }
@@ -307,10 +294,9 @@ class MlNamespace extends AbstractNamespace
     {
         $calendar_id = $this->extractArgument($params, 'calendar_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\GetCalendars');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\GetCalendars;
         $endpoint->setParams($params);
-        $endpoint->setCalendar_id($calendar_id);
+        $endpoint->setCalendarId($calendar_id);
 
         return $this->performRequest($endpoint);
     }
@@ -333,11 +319,10 @@ class MlNamespace extends AbstractNamespace
         $category_id = $this->extractArgument($params, 'category_id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\GetCategories');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\GetCategories;
         $endpoint->setParams($params);
-        $endpoint->setJob_id($job_id);
-        $endpoint->setCategory_id($category_id);
+        $endpoint->setJobId($job_id);
+        $endpoint->setCategoryId($category_id);
         $endpoint->setBody($body);
 
         return $this->performRequest($endpoint);
@@ -356,10 +341,9 @@ class MlNamespace extends AbstractNamespace
     {
         $datafeed_id = $this->extractArgument($params, 'datafeed_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\GetDatafeedStats');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\GetDatafeedStats;
         $endpoint->setParams($params);
-        $endpoint->setDatafeed_id($datafeed_id);
+        $endpoint->setDatafeedId($datafeed_id);
 
         return $this->performRequest($endpoint);
     }
@@ -377,10 +361,9 @@ class MlNamespace extends AbstractNamespace
     {
         $datafeed_id = $this->extractArgument($params, 'datafeed_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\GetDatafeeds');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\GetDatafeeds;
         $endpoint->setParams($params);
-        $endpoint->setDatafeed_id($datafeed_id);
+        $endpoint->setDatafeedId($datafeed_id);
 
         return $this->performRequest($endpoint);
     }
@@ -396,10 +379,9 @@ class MlNamespace extends AbstractNamespace
     {
         $filter_id = $this->extractArgument($params, 'filter_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\GetFilters');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\GetFilters;
         $endpoint->setParams($params);
-        $endpoint->setFilter_id($filter_id);
+        $endpoint->setFilterId($filter_id);
 
         return $this->performRequest($endpoint);
     }
@@ -426,10 +408,9 @@ class MlNamespace extends AbstractNamespace
         $job_id = $this->extractArgument($params, 'job_id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\GetInfluencers');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\GetInfluencers;
         $endpoint->setParams($params);
-        $endpoint->setJob_id($job_id);
+        $endpoint->setJobId($job_id);
         $endpoint->setBody($body);
 
         return $this->performRequest($endpoint);
@@ -448,10 +429,9 @@ class MlNamespace extends AbstractNamespace
     {
         $job_id = $this->extractArgument($params, 'job_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\GetJobStats');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\GetJobStats;
         $endpoint->setParams($params);
-        $endpoint->setJob_id($job_id);
+        $endpoint->setJobId($job_id);
 
         return $this->performRequest($endpoint);
     }
@@ -469,10 +449,9 @@ class MlNamespace extends AbstractNamespace
     {
         $job_id = $this->extractArgument($params, 'job_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\GetJobs');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\GetJobs;
         $endpoint->setParams($params);
-        $endpoint->setJob_id($job_id);
+        $endpoint->setJobId($job_id);
 
         return $this->performRequest($endpoint);
     }
@@ -499,11 +478,10 @@ class MlNamespace extends AbstractNamespace
         $snapshot_id = $this->extractArgument($params, 'snapshot_id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\GetModelSnapshots');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\GetModelSnapshots;
         $endpoint->setParams($params);
-        $endpoint->setJob_id($job_id);
-        $endpoint->setSnapshot_id($snapshot_id);
+        $endpoint->setJobId($job_id);
+        $endpoint->setSnapshotId($snapshot_id);
         $endpoint->setBody($body);
 
         return $this->performRequest($endpoint);
@@ -530,10 +508,9 @@ class MlNamespace extends AbstractNamespace
         $job_id = $this->extractArgument($params, 'job_id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\GetOverallBuckets');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\GetOverallBuckets;
         $endpoint->setParams($params);
-        $endpoint->setJob_id($job_id);
+        $endpoint->setJobId($job_id);
         $endpoint->setBody($body);
 
         return $this->performRequest($endpoint);
@@ -561,10 +538,9 @@ class MlNamespace extends AbstractNamespace
         $job_id = $this->extractArgument($params, 'job_id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\GetRecords');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\GetRecords;
         $endpoint->setParams($params);
-        $endpoint->setJob_id($job_id);
+        $endpoint->setJobId($job_id);
         $endpoint->setBody($body);
 
         return $this->performRequest($endpoint);
@@ -575,8 +551,7 @@ class MlNamespace extends AbstractNamespace
     public function info(array $params = [])
     {
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\Info');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\Info;
         $endpoint->setParams($params);
 
         return $this->performRequest($endpoint);
@@ -598,11 +573,10 @@ class MlNamespace extends AbstractNamespace
         $ignore_downtime = $this->extractArgument($params, 'ignore_downtime');
         $timeout = $this->extractArgument($params, 'timeout');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\OpenJob');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\OpenJob;
         $endpoint->setParams($params);
-        $endpoint->setJob_id($job_id);
-        $endpoint->setIgnore_downtime($ignore_downtime);
+        $endpoint->setJobId($job_id);
+        $endpoint->setIgnoreDowntime($ignore_downtime);
         $endpoint->setTimeout($timeout);
 
         return $this->performRequest($endpoint);
@@ -619,10 +593,9 @@ class MlNamespace extends AbstractNamespace
         $calendar_id = $this->extractArgument($params, 'calendar_id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\PostCalendarEvents');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\PostCalendarEvents;
         $endpoint->setParams($params);
-        $endpoint->setCalendar_id($calendar_id);
+        $endpoint->setCalendarId($calendar_id);
         $endpoint->setBody($body);
 
         return $this->performRequest($endpoint);
@@ -644,10 +617,9 @@ class MlNamespace extends AbstractNamespace
         $job_id = $this->extractArgument($params, 'job_id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\PostData');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\PostData;
         $endpoint->setParams($params);
-        $endpoint->setJob_id($job_id);
+        $endpoint->setJobId($job_id);
         $endpoint->setBody($body);
 
         return $this->performRequest($endpoint);
@@ -665,10 +637,9 @@ class MlNamespace extends AbstractNamespace
     {
         $datafeed_id = $this->extractArgument($params, 'datafeed_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\PreviewDatafeed');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\PreviewDatafeed;
         $endpoint->setParams($params);
-        $endpoint->setDatafeed_id($datafeed_id);
+        $endpoint->setDatafeedId($datafeed_id);
 
         return $this->performRequest($endpoint);
     }
@@ -684,10 +655,9 @@ class MlNamespace extends AbstractNamespace
         $calendar_id = $this->extractArgument($params, 'calendar_id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\PutCalendar');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\PutCalendar;
         $endpoint->setParams($params);
-        $endpoint->setCalendar_id($calendar_id);
+        $endpoint->setCalendarId($calendar_id);
         $endpoint->setBody($body);
 
         return $this->performRequest($endpoint);
@@ -704,11 +674,10 @@ class MlNamespace extends AbstractNamespace
         $calendar_id = $this->extractArgument($params, 'calendar_id');
         $job_id = $this->extractArgument($params, 'job_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\PutCalendarJob');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\PutCalendarJob;
         $endpoint->setParams($params);
-        $endpoint->setCalendar_id($calendar_id);
-        $endpoint->setJob_id($job_id);
+        $endpoint->setCalendarId($calendar_id);
+        $endpoint->setJobId($job_id);
 
         return $this->performRequest($endpoint);
     }
@@ -727,10 +696,9 @@ class MlNamespace extends AbstractNamespace
         $datafeed_id = $this->extractArgument($params, 'datafeed_id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\PutDatafeed');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\PutDatafeed;
         $endpoint->setParams($params);
-        $endpoint->setDatafeed_id($datafeed_id);
+        $endpoint->setDatafeedId($datafeed_id);
         $endpoint->setBody($body);
 
         return $this->performRequest($endpoint);
@@ -747,10 +715,9 @@ class MlNamespace extends AbstractNamespace
         $filter_id = $this->extractArgument($params, 'filter_id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\PutFilter');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\PutFilter;
         $endpoint->setParams($params);
-        $endpoint->setFilter_id($filter_id);
+        $endpoint->setFilterId($filter_id);
         $endpoint->setBody($body);
 
         return $this->performRequest($endpoint);
@@ -770,10 +737,9 @@ class MlNamespace extends AbstractNamespace
         $job_id = $this->extractArgument($params, 'job_id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\PutJob');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\PutJob;
         $endpoint->setParams($params);
-        $endpoint->setJob_id($job_id);
+        $endpoint->setJobId($job_id);
         $endpoint->setBody($body);
 
         return $this->performRequest($endpoint);
@@ -796,11 +762,10 @@ class MlNamespace extends AbstractNamespace
         $snapshot_id = $this->extractArgument($params, 'snapshot_id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\RevertModelSnapshot');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\RevertModelSnapshot;
         $endpoint->setParams($params);
-        $endpoint->setJob_id($job_id);
-        $endpoint->setSnapshot_id($snapshot_id);
+        $endpoint->setJobId($job_id);
+        $endpoint->setSnapshotId($snapshot_id);
         $endpoint->setBody($body);
 
         return $this->performRequest($endpoint);
@@ -823,10 +788,9 @@ class MlNamespace extends AbstractNamespace
         $datafeed_id = $this->extractArgument($params, 'datafeed_id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\StartDatafeed');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\StartDatafeed;
         $endpoint->setParams($params);
-        $endpoint->setDatafeed_id($datafeed_id);
+        $endpoint->setDatafeedId($datafeed_id);
         $endpoint->setBody($body);
 
         return $this->performRequest($endpoint);
@@ -847,10 +811,9 @@ class MlNamespace extends AbstractNamespace
     {
         $datafeed_id = $this->extractArgument($params, 'datafeed_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\StopDatafeed');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\StopDatafeed;
         $endpoint->setParams($params);
-        $endpoint->setDatafeed_id($datafeed_id);
+        $endpoint->setDatafeedId($datafeed_id);
 
         return $this->performRequest($endpoint);
     }
@@ -869,10 +832,9 @@ class MlNamespace extends AbstractNamespace
         $datafeed_id = $this->extractArgument($params, 'datafeed_id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\UpdateDatafeed');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\UpdateDatafeed;
         $endpoint->setParams($params);
-        $endpoint->setDatafeed_id($datafeed_id);
+        $endpoint->setDatafeedId($datafeed_id);
         $endpoint->setBody($body);
 
         return $this->performRequest($endpoint);
@@ -892,10 +854,9 @@ class MlNamespace extends AbstractNamespace
         $job_id = $this->extractArgument($params, 'job_id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\UpdateJob');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\UpdateJob;
         $endpoint->setParams($params);
-        $endpoint->setJob_id($job_id);
+        $endpoint->setJobId($job_id);
         $endpoint->setBody($body);
 
         return $this->performRequest($endpoint);
@@ -917,11 +878,10 @@ class MlNamespace extends AbstractNamespace
         $snapshot_id = $this->extractArgument($params, 'snapshot_id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\UpdateModelSnapshot');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\UpdateModelSnapshot;
         $endpoint->setParams($params);
-        $endpoint->setJob_id($job_id);
-        $endpoint->setSnapshot_id($snapshot_id);
+        $endpoint->setJobId($job_id);
+        $endpoint->setSnapshotId($snapshot_id);
         $endpoint->setBody($body);
 
         return $this->performRequest($endpoint);
@@ -936,8 +896,7 @@ class MlNamespace extends AbstractNamespace
     {
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\Validate');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\Validate;
         $endpoint->setParams($params);
         $endpoint->setBody($body);
 
@@ -953,8 +912,7 @@ class MlNamespace extends AbstractNamespace
     {
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ml\ValidateDetector');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ml\ValidateDetector;
         $endpoint->setParams($params);
         $endpoint->setBody($body);
 

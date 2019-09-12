@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class PostCalendarEvents
  * Elasticsearch API name xpack.ml.post_calendar_events
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -40,7 +40,7 @@ class PostCalendarEvents extends AbstractEndpoint
         return 'POST';
     }
     
-    public function setPostCalendarEvents($body): PostCalendarEvents
+    public function setBody($body): PostCalendarEvents
     {
         if (isset($body) !== true) {
             return $this;
@@ -50,7 +50,7 @@ class PostCalendarEvents extends AbstractEndpoint
         return $this;
     }
 
-    public function setPostCalendarEvents($calendar_id): PostCalendarEvents
+    public function setCalendarId($calendar_id): PostCalendarEvents
     {
         if (isset($calendar_id) !== true) {
             return $this;

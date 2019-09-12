@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class DeleteRoleMapping
  * Elasticsearch API name xpack.security.delete_role_mapping
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Security
@@ -42,7 +42,7 @@ class DeleteRoleMapping extends AbstractEndpoint
         return 'DELETE';
     }
     
-    public function setDeleteRoleMapping($name): DeleteRoleMapping
+    public function setName($name): DeleteRoleMapping
     {
         if (isset($name) !== true) {
             return $this;

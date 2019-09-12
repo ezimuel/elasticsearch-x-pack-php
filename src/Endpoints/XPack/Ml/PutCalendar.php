@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class PutCalendar
  * Elasticsearch API name xpack.ml.put_calendar
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -40,7 +40,7 @@ class PutCalendar extends AbstractEndpoint
         return 'PUT';
     }
     
-    public function setPutCalendar($body): PutCalendar
+    public function setBody($body): PutCalendar
     {
         if (isset($body) !== true) {
             return $this;
@@ -50,7 +50,7 @@ class PutCalendar extends AbstractEndpoint
         return $this;
     }
 
-    public function setPutCalendar($calendar_id): PutCalendar
+    public function setCalendarId($calendar_id): PutCalendar
     {
         if (isset($calendar_id) !== true) {
             return $this;

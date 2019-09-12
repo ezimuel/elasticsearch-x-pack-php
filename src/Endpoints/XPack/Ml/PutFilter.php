@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class PutFilter
  * Elasticsearch API name xpack.ml.put_filter
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -40,7 +40,7 @@ class PutFilter extends AbstractEndpoint
         return 'PUT';
     }
     
-    public function setPutFilter($body): PutFilter
+    public function setBody($body): PutFilter
     {
         if (isset($body) !== true) {
             return $this;
@@ -50,7 +50,7 @@ class PutFilter extends AbstractEndpoint
         return $this;
     }
 
-    public function setPutFilter($filter_id): PutFilter
+    public function setFilterId($filter_id): PutFilter
     {
         if (isset($filter_id) !== true) {
             return $this;

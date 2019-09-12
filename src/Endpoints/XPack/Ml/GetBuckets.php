@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class GetBuckets
  * Elasticsearch API name xpack.ml.get_buckets
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -54,7 +54,7 @@ class GetBuckets extends AbstractEndpoint
         return isset($this->body) ? 'POST' : 'GET';
     }
     
-    public function setGetBuckets($body): GetBuckets
+    public function setBody($body): GetBuckets
     {
         if (isset($body) !== true) {
             return $this;
@@ -64,7 +64,7 @@ class GetBuckets extends AbstractEndpoint
         return $this;
     }
 
-    public function setGetBuckets($job_id): GetBuckets
+    public function setJobId($job_id): GetBuckets
     {
         if (isset($job_id) !== true) {
             return $this;
@@ -74,7 +74,7 @@ class GetBuckets extends AbstractEndpoint
         return $this;
     }
 
-    public function setGetBuckets($timestamp): GetBuckets
+    public function setTimestamp($timestamp): GetBuckets
     {
         if (isset($timestamp) !== true) {
             return $this;

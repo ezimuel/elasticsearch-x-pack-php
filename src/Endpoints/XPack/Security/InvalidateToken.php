@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class InvalidateToken
  * Elasticsearch API name xpack.security.invalidate_token
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Security
@@ -36,7 +36,7 @@ class InvalidateToken extends AbstractEndpoint
         return 'DELETE';
     }
     
-    public function setInvalidateToken($body): InvalidateToken
+    public function setBody($body): InvalidateToken
     {
         if (isset($body) !== true) {
             return $this;

@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class GetJobStats
  * Elasticsearch API name xpack.ml.get_job_stats
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -40,7 +40,7 @@ class GetJobStats extends AbstractEndpoint
         return 'GET';
     }
     
-    public function setGetJobStats($job_id): GetJobStats
+    public function setJobId($job_id): GetJobStats
     {
         if (isset($job_id) !== true) {
             return $this;

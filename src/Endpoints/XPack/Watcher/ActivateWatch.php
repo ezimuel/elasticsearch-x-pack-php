@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class ActivateWatch
  * Elasticsearch API name xpack.watcher.activate_watch
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Watcher
@@ -42,7 +42,7 @@ class ActivateWatch extends AbstractEndpoint
         return 'PUT';
     }
     
-    public function setActivateWatch($watch_id): ActivateWatch
+    public function setWatchId($watch_id): ActivateWatch
     {
         if (isset($watch_id) !== true) {
             return $this;

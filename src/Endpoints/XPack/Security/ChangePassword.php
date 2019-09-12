@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class ChangePassword
  * Elasticsearch API name xpack.security.change_password
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Security
@@ -40,7 +40,7 @@ class ChangePassword extends AbstractEndpoint
         return 'PUT';
     }
     
-    public function setChangePassword($body): ChangePassword
+    public function setBody($body): ChangePassword
     {
         if (isset($body) !== true) {
             return $this;
@@ -50,7 +50,7 @@ class ChangePassword extends AbstractEndpoint
         return $this;
     }
 
-    public function setChangePassword($username): ChangePassword
+    public function setUsername($username): ChangePassword
     {
         if (isset($username) !== true) {
             return $this;

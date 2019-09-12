@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class FlushJob
  * Elasticsearch API name xpack.ml.flush_job
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -46,7 +46,7 @@ class FlushJob extends AbstractEndpoint
         return 'POST';
     }
     
-    public function setFlushJob($body): FlushJob
+    public function setBody($body): FlushJob
     {
         if (isset($body) !== true) {
             return $this;
@@ -56,7 +56,7 @@ class FlushJob extends AbstractEndpoint
         return $this;
     }
 
-    public function setFlushJob($job_id): FlushJob
+    public function setJobId($job_id): FlushJob
     {
         if (isset($job_id) !== true) {
             return $this;

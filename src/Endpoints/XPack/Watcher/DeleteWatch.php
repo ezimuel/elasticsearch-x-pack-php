@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class DeleteWatch
  * Elasticsearch API name xpack.watcher.delete_watch
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Watcher
@@ -42,7 +42,7 @@ class DeleteWatch extends AbstractEndpoint
         return 'DELETE';
     }
     
-    public function setDeleteWatch($id): DeleteWatch
+    public function setId($id): DeleteWatch
     {
         if (isset($id) !== true) {
             return $this;

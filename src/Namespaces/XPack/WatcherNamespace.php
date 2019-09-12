@@ -7,7 +7,7 @@ use Elasticsearch\Namespaces\AbstractNamespace;
 
 /**
  * Class WatcherNamespace
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Namespaces\XPack
@@ -33,11 +33,10 @@ class WatcherNamespace extends AbstractNamespace
         $watch_id = $this->extractArgument($params, 'watch_id');
         $action_id = $this->extractArgument($params, 'action_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Watcher\AckWatch');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Watcher\AckWatch;
         $endpoint->setParams($params);
-        $endpoint->setWatch_id($watch_id);
-        $endpoint->setAction_id($action_id);
+        $endpoint->setWatchId($watch_id);
+        $endpoint->setActionId($action_id);
 
         return $this->performRequest($endpoint);
     }
@@ -55,10 +54,9 @@ class WatcherNamespace extends AbstractNamespace
     {
         $watch_id = $this->extractArgument($params, 'watch_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Watcher\ActivateWatch');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Watcher\ActivateWatch;
         $endpoint->setParams($params);
-        $endpoint->setWatch_id($watch_id);
+        $endpoint->setWatchId($watch_id);
 
         return $this->performRequest($endpoint);
     }
@@ -76,10 +74,9 @@ class WatcherNamespace extends AbstractNamespace
     {
         $watch_id = $this->extractArgument($params, 'watch_id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Watcher\DeactivateWatch');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Watcher\DeactivateWatch;
         $endpoint->setParams($params);
-        $endpoint->setWatch_id($watch_id);
+        $endpoint->setWatchId($watch_id);
 
         return $this->performRequest($endpoint);
     }
@@ -97,8 +94,7 @@ class WatcherNamespace extends AbstractNamespace
     {
         $id = $this->extractArgument($params, 'id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Watcher\DeleteWatch');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Watcher\DeleteWatch;
         $endpoint->setParams($params);
         $endpoint->setId($id);
 
@@ -120,8 +116,7 @@ class WatcherNamespace extends AbstractNamespace
         $id = $this->extractArgument($params, 'id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Watcher\ExecuteWatch');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Watcher\ExecuteWatch;
         $endpoint->setParams($params);
         $endpoint->setId($id);
         $endpoint->setBody($body);
@@ -141,8 +136,7 @@ class WatcherNamespace extends AbstractNamespace
     {
         $id = $this->extractArgument($params, 'id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Watcher\GetWatch');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Watcher\GetWatch;
         $endpoint->setParams($params);
         $endpoint->setId($id);
 
@@ -166,8 +160,7 @@ class WatcherNamespace extends AbstractNamespace
         $id = $this->extractArgument($params, 'id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Watcher\PutWatch');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Watcher\PutWatch;
         $endpoint->setParams($params);
         $endpoint->setId($id);
         $endpoint->setBody($body);
@@ -183,8 +176,7 @@ class WatcherNamespace extends AbstractNamespace
     public function restart(array $params = [])
     {
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Watcher\Restart');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Watcher\Restart;
         $endpoint->setParams($params);
 
         return $this->performRequest($endpoint);
@@ -198,8 +190,7 @@ class WatcherNamespace extends AbstractNamespace
     public function start(array $params = [])
     {
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Watcher\Start');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Watcher\Start;
         $endpoint->setParams($params);
 
         return $this->performRequest($endpoint);
@@ -219,8 +210,7 @@ class WatcherNamespace extends AbstractNamespace
     {
         $metric = $this->extractArgument($params, 'metric');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Watcher\Stats');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Watcher\Stats;
         $endpoint->setParams($params);
         $endpoint->setMetric($metric);
 
@@ -235,8 +225,7 @@ class WatcherNamespace extends AbstractNamespace
     public function stop(array $params = [])
     {
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Watcher\Stop');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Watcher\Stop;
         $endpoint->setParams($params);
 
         return $this->performRequest($endpoint);

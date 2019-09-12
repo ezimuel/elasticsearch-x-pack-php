@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class ClearCachedRoles
  * Elasticsearch API name xpack.security.clear_cached_roles
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Security
@@ -42,7 +42,7 @@ class ClearCachedRoles extends AbstractEndpoint
         return 'POST';
     }
     
-    public function setClearCachedRoles($name): ClearCachedRoles
+    public function setName($name): ClearCachedRoles
     {
         if (isset($name) !== true) {
             return $this;

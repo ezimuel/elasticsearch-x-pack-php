@@ -7,7 +7,7 @@ use Elasticsearch\Namespaces\AbstractNamespace;
 
 /**
  * Class MigrationNamespace
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Namespaces\XPack
@@ -30,8 +30,7 @@ class MigrationNamespace extends AbstractNamespace
     {
         $index = $this->extractArgument($params, 'index');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Migration\Deprecations');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Migration\Deprecations;
         $endpoint->setParams($params);
         $endpoint->setIndex($index);
 
@@ -53,8 +52,7 @@ class MigrationNamespace extends AbstractNamespace
     {
         $index = $this->extractArgument($params, 'index');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Migration\GetAssistance');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Migration\GetAssistance;
         $endpoint->setParams($params);
         $endpoint->setIndex($index);
 
@@ -74,8 +72,7 @@ class MigrationNamespace extends AbstractNamespace
     {
         $index = $this->extractArgument($params, 'index');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Migration\Upgrade');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Migration\Upgrade;
         $endpoint->setParams($params);
         $endpoint->setIndex($index);
 

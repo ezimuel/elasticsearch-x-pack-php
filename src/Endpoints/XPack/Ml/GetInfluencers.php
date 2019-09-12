@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class GetInfluencers
  * Elasticsearch API name xpack.ml.get_influencers
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -49,7 +49,7 @@ class GetInfluencers extends AbstractEndpoint
         return isset($this->body) ? 'POST' : 'GET';
     }
     
-    public function setGetInfluencers($body): GetInfluencers
+    public function setBody($body): GetInfluencers
     {
         if (isset($body) !== true) {
             return $this;
@@ -59,7 +59,7 @@ class GetInfluencers extends AbstractEndpoint
         return $this;
     }
 
-    public function setGetInfluencers($job_id): GetInfluencers
+    public function setJobId($job_id): GetInfluencers
     {
         if (isset($job_id) !== true) {
             return $this;

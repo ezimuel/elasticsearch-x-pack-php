@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class CloseJob
  * Elasticsearch API name xpack.ml.close_job
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -44,7 +44,7 @@ class CloseJob extends AbstractEndpoint
         return 'POST';
     }
     
-    public function setCloseJob($job_id): CloseJob
+    public function setJobId($job_id): CloseJob
     {
         if (isset($job_id) !== true) {
             return $this;

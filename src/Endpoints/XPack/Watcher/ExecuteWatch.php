@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class ExecuteWatch
  * Elasticsearch API name xpack.watcher.execute_watch
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Watcher
@@ -40,7 +40,7 @@ class ExecuteWatch extends AbstractEndpoint
         return 'PUT';
     }
     
-    public function setExecuteWatch($body): ExecuteWatch
+    public function setBody($body): ExecuteWatch
     {
         if (isset($body) !== true) {
             return $this;
@@ -50,7 +50,7 @@ class ExecuteWatch extends AbstractEndpoint
         return $this;
     }
 
-    public function setExecuteWatch($id): ExecuteWatch
+    public function setId($id): ExecuteWatch
     {
         if (isset($id) !== true) {
             return $this;

@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class UpdateJob
  * Elasticsearch API name xpack.ml.update_job
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -40,7 +40,7 @@ class UpdateJob extends AbstractEndpoint
         return 'POST';
     }
     
-    public function setUpdateJob($body): UpdateJob
+    public function setBody($body): UpdateJob
     {
         if (isset($body) !== true) {
             return $this;
@@ -50,7 +50,7 @@ class UpdateJob extends AbstractEndpoint
         return $this;
     }
 
-    public function setUpdateJob($job_id): UpdateJob
+    public function setJobId($job_id): UpdateJob
     {
         if (isset($job_id) !== true) {
             return $this;

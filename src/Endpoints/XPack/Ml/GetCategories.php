@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class GetCategories
  * Elasticsearch API name xpack.ml.get_categories
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -47,7 +47,7 @@ class GetCategories extends AbstractEndpoint
         return isset($this->body) ? 'POST' : 'GET';
     }
     
-    public function setGetCategories($body): GetCategories
+    public function setBody($body): GetCategories
     {
         if (isset($body) !== true) {
             return $this;
@@ -57,7 +57,7 @@ class GetCategories extends AbstractEndpoint
         return $this;
     }
 
-    public function setGetCategories($job_id): GetCategories
+    public function setJobId($job_id): GetCategories
     {
         if (isset($job_id) !== true) {
             return $this;
@@ -67,7 +67,7 @@ class GetCategories extends AbstractEndpoint
         return $this;
     }
 
-    public function setGetCategories($category_id): GetCategories
+    public function setCategoryId($category_id): GetCategories
     {
         if (isset($category_id) !== true) {
             return $this;

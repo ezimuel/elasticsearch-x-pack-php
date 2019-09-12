@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class UpdateModelSnapshot
  * Elasticsearch API name xpack.ml.update_model_snapshot
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -48,7 +48,7 @@ class UpdateModelSnapshot extends AbstractEndpoint
         return 'POST';
     }
     
-    public function setUpdateModelSnapshot($body): UpdateModelSnapshot
+    public function setBody($body): UpdateModelSnapshot
     {
         if (isset($body) !== true) {
             return $this;
@@ -58,7 +58,7 @@ class UpdateModelSnapshot extends AbstractEndpoint
         return $this;
     }
 
-    public function setUpdateModelSnapshot($job_id): UpdateModelSnapshot
+    public function setJobId($job_id): UpdateModelSnapshot
     {
         if (isset($job_id) !== true) {
             return $this;
@@ -68,7 +68,7 @@ class UpdateModelSnapshot extends AbstractEndpoint
         return $this;
     }
 
-    public function setUpdateModelSnapshot($snapshot_id): UpdateModelSnapshot
+    public function setSnapshotId($snapshot_id): UpdateModelSnapshot
     {
         if (isset($snapshot_id) !== true) {
             return $this;

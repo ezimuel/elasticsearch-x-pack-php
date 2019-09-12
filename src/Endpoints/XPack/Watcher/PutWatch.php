@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class PutWatch
  * Elasticsearch API name xpack.watcher.put_watch
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Watcher
@@ -44,7 +44,7 @@ class PutWatch extends AbstractEndpoint
         return 'PUT';
     }
     
-    public function setPutWatch($body): PutWatch
+    public function setBody($body): PutWatch
     {
         if (isset($body) !== true) {
             return $this;
@@ -54,7 +54,7 @@ class PutWatch extends AbstractEndpoint
         return $this;
     }
 
-    public function setPutWatch($id): PutWatch
+    public function setId($id): PutWatch
     {
         if (isset($id) !== true) {
             return $this;

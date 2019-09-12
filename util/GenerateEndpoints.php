@@ -75,6 +75,9 @@ foreach ($files as $file) {
 $namespaceDir = __DIR__ . '/../src/Namespaces/XPack/';
 $countNamespace = 0;
 foreach ($namespaces as $name => $endpoints) {
+    if (empty($name)) {
+        continue;
+    }
     $namespace = new NamespaceEndpoint($name, $ver);
     foreach ($endpoints as $ep) {
         $namespace->addEndpoint($ep);

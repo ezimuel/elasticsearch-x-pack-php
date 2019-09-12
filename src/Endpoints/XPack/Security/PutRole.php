@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class PutRole
  * Elasticsearch API name xpack.security.put_role
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Security
@@ -42,7 +42,7 @@ class PutRole extends AbstractEndpoint
         return 'PUT';
     }
     
-    public function setPutRole($body): PutRole
+    public function setBody($body): PutRole
     {
         if (isset($body) !== true) {
             return $this;
@@ -52,7 +52,7 @@ class PutRole extends AbstractEndpoint
         return $this;
     }
 
-    public function setPutRole($name): PutRole
+    public function setName($name): PutRole
     {
         if (isset($name) !== true) {
             return $this;

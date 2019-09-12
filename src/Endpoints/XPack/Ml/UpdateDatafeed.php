@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class UpdateDatafeed
  * Elasticsearch API name xpack.ml.update_datafeed
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -40,7 +40,7 @@ class UpdateDatafeed extends AbstractEndpoint
         return 'POST';
     }
     
-    public function setUpdateDatafeed($body): UpdateDatafeed
+    public function setBody($body): UpdateDatafeed
     {
         if (isset($body) !== true) {
             return $this;
@@ -50,7 +50,7 @@ class UpdateDatafeed extends AbstractEndpoint
         return $this;
     }
 
-    public function setUpdateDatafeed($datafeed_id): UpdateDatafeed
+    public function setDatafeedId($datafeed_id): UpdateDatafeed
     {
         if (isset($datafeed_id) !== true) {
             return $this;

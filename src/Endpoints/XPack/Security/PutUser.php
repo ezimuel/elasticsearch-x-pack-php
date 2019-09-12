@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class PutUser
  * Elasticsearch API name xpack.security.put_user
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Security
@@ -42,7 +42,7 @@ class PutUser extends AbstractEndpoint
         return 'PUT';
     }
     
-    public function setPutUser($body): PutUser
+    public function setBody($body): PutUser
     {
         if (isset($body) !== true) {
             return $this;
@@ -52,7 +52,7 @@ class PutUser extends AbstractEndpoint
         return $this;
     }
 
-    public function setPutUser($username): PutUser
+    public function setUsername($username): PutUser
     {
         if (isset($username) !== true) {
             return $this;

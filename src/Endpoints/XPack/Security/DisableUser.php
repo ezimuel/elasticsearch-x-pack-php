@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class DisableUser
  * Elasticsearch API name xpack.security.disable_user
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Security
@@ -39,7 +39,7 @@ class DisableUser extends AbstractEndpoint
         return 'PUT';
     }
     
-    public function setDisableUser($username): DisableUser
+    public function setUsername($username): DisableUser
     {
         if (isset($username) !== true) {
             return $this;

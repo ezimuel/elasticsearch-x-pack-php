@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class ClearCursor
  * Elasticsearch API name xpack.sql.clear_cursor
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Sql
@@ -34,7 +34,7 @@ class ClearCursor extends AbstractEndpoint
         return 'POST';
     }
     
-    public function setClearCursor($body): ClearCursor
+    public function setBody($body): ClearCursor
     {
         if (isset($body) !== true) {
             return $this;

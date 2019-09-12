@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class GetFilters
  * Elasticsearch API name xpack.ml.get_filters
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -41,7 +41,7 @@ class GetFilters extends AbstractEndpoint
         return 'GET';
     }
     
-    public function setGetFilters($filter_id): GetFilters
+    public function setFilterId($filter_id): GetFilters
     {
         if (isset($filter_id) !== true) {
             return $this;

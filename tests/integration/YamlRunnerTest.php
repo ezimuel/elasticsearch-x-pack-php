@@ -1,8 +1,7 @@
 <?php
-
 declare(strict_types = 1);
 
-namespace Elasticsearch\XPack\IntegrationTests;
+namespace Elasticsearch\IntegrationTests\XPack;
 
 use Doctrine\Common\Inflector\Inflector;
 use Elasticsearch;
@@ -1085,7 +1084,7 @@ class YamlRunnerTest extends \PHPUnit\Framework\TestCase
     /**
      * Wait for cluster to be in a "YELLOW" state
      */
-    private function waitForYellow()
+    public function waitForYellow()
     {
         $host = static::getHost();
         $ch = curl_init("$host/_cluster/health?wait_for_status=yellow&timeout=50s");

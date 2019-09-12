@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class Validate
  * Elasticsearch API name xpack.ml.validate
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -36,7 +36,7 @@ class Validate extends AbstractEndpoint
         return 'POST';
     }
     
-    public function setValidate($body): Validate
+    public function setBody($body): Validate
     {
         if (isset($body) !== true) {
             return $this;

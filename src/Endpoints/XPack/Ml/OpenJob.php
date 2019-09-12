@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class OpenJob
  * Elasticsearch API name xpack.ml.open_job
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -42,7 +42,7 @@ class OpenJob extends AbstractEndpoint
         return 'POST';
     }
     
-    public function setOpenJob($job_id): OpenJob
+    public function setJobId($job_id): OpenJob
     {
         if (isset($job_id) !== true) {
             return $this;
@@ -52,7 +52,7 @@ class OpenJob extends AbstractEndpoint
         return $this;
     }
 
-    public function setOpenJob($ignore_downtime): OpenJob
+    public function setIgnoreDowntime($ignore_downtime): OpenJob
     {
         if (isset($ignore_downtime) !== true) {
             return $this;
@@ -62,7 +62,7 @@ class OpenJob extends AbstractEndpoint
         return $this;
     }
 
-    public function setOpenJob($timeout): OpenJob
+    public function setTimeout($timeout): OpenJob
     {
         if (isset($timeout) !== true) {
             return $this;

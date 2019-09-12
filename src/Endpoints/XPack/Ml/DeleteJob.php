@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class DeleteJob
  * Elasticsearch API name xpack.ml.delete_job
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -42,7 +42,7 @@ class DeleteJob extends AbstractEndpoint
         return 'DELETE';
     }
     
-    public function setDeleteJob($job_id): DeleteJob
+    public function setJobId($job_id): DeleteJob
     {
         if (isset($job_id) !== true) {
             return $this;

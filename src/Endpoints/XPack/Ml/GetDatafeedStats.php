@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class GetDatafeedStats
  * Elasticsearch API name xpack.ml.get_datafeed_stats
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -40,7 +40,7 @@ class GetDatafeedStats extends AbstractEndpoint
         return 'GET';
     }
     
-    public function setGetDatafeedStats($datafeed_id): GetDatafeedStats
+    public function setDatafeedId($datafeed_id): GetDatafeedStats
     {
         if (isset($datafeed_id) !== true) {
             return $this;

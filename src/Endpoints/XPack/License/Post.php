@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class Post
  * Elasticsearch API name xpack.license.post
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\License
@@ -36,7 +36,7 @@ class Post extends AbstractEndpoint
         return 'PUT';
     }
     
-    public function setPost($body): Post
+    public function setBody($body): Post
     {
         if (isset($body) !== true) {
             return $this;

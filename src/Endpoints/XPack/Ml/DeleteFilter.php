@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class DeleteFilter
  * Elasticsearch API name xpack.ml.delete_filter
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -40,7 +40,7 @@ class DeleteFilter extends AbstractEndpoint
         return 'DELETE';
     }
     
-    public function setDeleteFilter($filter_id): DeleteFilter
+    public function setFilterId($filter_id): DeleteFilter
     {
         if (isset($filter_id) !== true) {
             return $this;

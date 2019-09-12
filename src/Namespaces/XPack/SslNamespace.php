@@ -7,7 +7,7 @@ use Elasticsearch\Namespaces\AbstractNamespace;
 
 /**
  * Class SslNamespace
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Namespaces\XPack
@@ -26,8 +26,7 @@ class SslNamespace extends AbstractNamespace
     public function certificates(array $params = [])
     {
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Ssl\Certificates');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Ssl\Certificates;
         $endpoint->setParams($params);
 
         return $this->performRequest($endpoint);

@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class PutJob
  * Elasticsearch API name xpack.ml.put_job
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -40,7 +40,7 @@ class PutJob extends AbstractEndpoint
         return 'PUT';
     }
     
-    public function setPutJob($body): PutJob
+    public function setBody($body): PutJob
     {
         if (isset($body) !== true) {
             return $this;
@@ -50,7 +50,7 @@ class PutJob extends AbstractEndpoint
         return $this;
     }
 
-    public function setPutJob($job_id): PutJob
+    public function setJobId($job_id): PutJob
     {
         if (isset($job_id) !== true) {
             return $this;

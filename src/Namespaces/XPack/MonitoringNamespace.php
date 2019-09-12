@@ -7,7 +7,7 @@ use Elasticsearch\Namespaces\AbstractNamespace;
 
 /**
  * Class MonitoringNamespace
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Namespaces\XPack
@@ -35,8 +35,7 @@ class MonitoringNamespace extends AbstractNamespace
         $type = $this->extractArgument($params, 'type');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Monitoring\Bulk');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Monitoring\Bulk;
         $endpoint->setParams($params);
         $endpoint->setType($type);
         $endpoint->setBody($body);

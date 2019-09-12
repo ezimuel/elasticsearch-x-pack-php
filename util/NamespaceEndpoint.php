@@ -78,7 +78,8 @@ class NamespaceEndpoint
             $extract .= str_replace(':part', $part, file_get_contents(self::EXTRACT_ARG_TEMPLATE));
 
             $param = str_replace(':param', $part, file_get_contents(self::SET_PARAM_TEMPLATE));
-            $setParams .= str_replace(':Param', ucfirst($part), $param);
+
+            $setParams .= str_replace(':Param', $this->normalizeName($part), $param);
         }
         if (!$endpoint->isBodyNull()) {
             $extract .= str_replace(':part', 'body', file_get_contents(self::EXTRACT_ARG_TEMPLATE));
@@ -90,10 +91,15 @@ class NamespaceEndpoint
         $code = str_replace(':setparam', $setParams, $code);
 
         if (empty($endpoint->namespace)) {
-            $endpointClass = 'XPack\\' . $endpoint->getClassName();
+            $endpointClass = $endpoint->getClassName();
         } else {
-            $endpointClass = 'XPack\\' . ucfirst($endpoint->namespace) . '\\' . $endpoint->getClassName();
+            $endpointClass = ucfirst($endpoint->namespace) . '\\' . $endpoint->getClassName();
         }
         return str_replace(':EndpointClass', $endpointClass, $code);
+    }
+
+    protected function normalizeName(string $name): string
+    {
+        return str_replace('_', '', ucwords($name, '_'));
     }
 }

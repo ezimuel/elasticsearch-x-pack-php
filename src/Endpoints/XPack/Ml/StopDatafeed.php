@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class StopDatafeed
  * Elasticsearch API name xpack.ml.stop_datafeed
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -44,7 +44,7 @@ class StopDatafeed extends AbstractEndpoint
         return 'POST';
     }
     
-    public function setStopDatafeed($datafeed_id): StopDatafeed
+    public function setDatafeedId($datafeed_id): StopDatafeed
     {
         if (isset($datafeed_id) !== true) {
             return $this;

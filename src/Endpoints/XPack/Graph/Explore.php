@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class Explore
  * Elasticsearch API name xpack.graph.explore
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Graph
@@ -44,7 +44,7 @@ class Explore extends AbstractEndpoint
         return isset($this->body) ? 'POST' : 'GET';
     }
     
-    public function setExplore($body): Explore
+    public function setBody($body): Explore
     {
         if (isset($body) !== true) {
             return $this;

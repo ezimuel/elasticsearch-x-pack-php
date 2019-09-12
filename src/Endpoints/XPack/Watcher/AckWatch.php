@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class AckWatch
  * Elasticsearch API name xpack.watcher.ack_watch
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Watcher
@@ -46,7 +46,7 @@ class AckWatch extends AbstractEndpoint
         return 'PUT';
     }
     
-    public function setAckWatch($watch_id): AckWatch
+    public function setWatchId($watch_id): AckWatch
     {
         if (isset($watch_id) !== true) {
             return $this;
@@ -56,7 +56,7 @@ class AckWatch extends AbstractEndpoint
         return $this;
     }
 
-    public function setAckWatch($action_id): AckWatch
+    public function setActionId($action_id): AckWatch
     {
         if (isset($action_id) !== true) {
             return $this;

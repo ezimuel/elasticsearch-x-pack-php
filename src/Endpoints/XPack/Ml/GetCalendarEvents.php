@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class GetCalendarEvents
  * Elasticsearch API name xpack.ml.get_calendar_events
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -46,7 +46,7 @@ class GetCalendarEvents extends AbstractEndpoint
         return 'GET';
     }
     
-    public function setGetCalendarEvents($calendar_id): GetCalendarEvents
+    public function setCalendarId($calendar_id): GetCalendarEvents
     {
         if (isset($calendar_id) !== true) {
             return $this;

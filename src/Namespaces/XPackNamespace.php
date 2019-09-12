@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace Elasticsearch\Namespaces\XPack;
+namespace Elasticsearch\Namespaces;
 
 use Elasticsearch\Namespaces\NamespaceBuilderInterface;
 use Elasticsearch\Serializers\SerializerInterface;

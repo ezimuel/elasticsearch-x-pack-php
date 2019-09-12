@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class ValidateDetector
  * Elasticsearch API name xpack.ml.validate_detector
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -36,7 +36,7 @@ class ValidateDetector extends AbstractEndpoint
         return 'POST';
     }
     
-    public function setValidateDetector($body): ValidateDetector
+    public function setBody($body): ValidateDetector
     {
         if (isset($body) !== true) {
             return $this;

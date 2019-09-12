@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class GetRecords
  * Elasticsearch API name xpack.ml.get_records
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -49,7 +49,7 @@ class GetRecords extends AbstractEndpoint
         return isset($this->body) ? 'POST' : 'GET';
     }
     
-    public function setGetRecords($body): GetRecords
+    public function setBody($body): GetRecords
     {
         if (isset($body) !== true) {
             return $this;
@@ -59,7 +59,7 @@ class GetRecords extends AbstractEndpoint
         return $this;
     }
 
-    public function setGetRecords($job_id): GetRecords
+    public function setJobId($job_id): GetRecords
     {
         if (isset($job_id) !== true) {
             return $this;

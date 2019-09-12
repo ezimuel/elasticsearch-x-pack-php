@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class GetWatch
  * Elasticsearch API name xpack.watcher.get_watch
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Watcher
@@ -42,7 +42,7 @@ class GetWatch extends AbstractEndpoint
         return 'GET';
     }
     
-    public function setGetWatch($id): GetWatch
+    public function setId($id): GetWatch
     {
         if (isset($id) !== true) {
             return $this;

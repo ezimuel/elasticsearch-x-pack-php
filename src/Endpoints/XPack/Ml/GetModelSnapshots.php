@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class GetModelSnapshots
  * Elasticsearch API name xpack.ml.get_model_snapshots
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -51,7 +51,7 @@ class GetModelSnapshots extends AbstractEndpoint
         return isset($this->body) ? 'POST' : 'GET';
     }
     
-    public function setGetModelSnapshots($body): GetModelSnapshots
+    public function setBody($body): GetModelSnapshots
     {
         if (isset($body) !== true) {
             return $this;
@@ -61,7 +61,7 @@ class GetModelSnapshots extends AbstractEndpoint
         return $this;
     }
 
-    public function setGetModelSnapshots($job_id): GetModelSnapshots
+    public function setJobId($job_id): GetModelSnapshots
     {
         if (isset($job_id) !== true) {
             return $this;
@@ -71,7 +71,7 @@ class GetModelSnapshots extends AbstractEndpoint
         return $this;
     }
 
-    public function setGetModelSnapshots($snapshot_id): GetModelSnapshots
+    public function setSnapshotId($snapshot_id): GetModelSnapshots
     {
         if (isset($snapshot_id) !== true) {
             return $this;

@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class GetRoleMapping
  * Elasticsearch API name xpack.security.get_role_mapping
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Security
@@ -40,7 +40,7 @@ class GetRoleMapping extends AbstractEndpoint
         return 'GET';
     }
     
-    public function setGetRoleMapping($name): GetRoleMapping
+    public function setName($name): GetRoleMapping
     {
         if (isset($name) !== true) {
             return $this;

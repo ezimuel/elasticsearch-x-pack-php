@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class GetJobs
  * Elasticsearch API name xpack.rollup.get_jobs
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Rollup
@@ -38,7 +38,7 @@ class GetJobs extends AbstractEndpoint
         return 'GET';
     }
     
-    public function setGetJobs($id): GetJobs
+    public function setId($id): GetJobs
     {
         if (isset($id) !== true) {
             return $this;

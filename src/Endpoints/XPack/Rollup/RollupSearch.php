@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class RollupSearch
  * Elasticsearch API name xpack.rollup.rollup_search
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Rollup
@@ -44,7 +44,7 @@ class RollupSearch extends AbstractEndpoint
         return isset($this->body) ? 'POST' : 'GET';
     }
     
-    public function setRollupSearch($body): RollupSearch
+    public function setBody($body): RollupSearch
     {
         if (isset($body) !== true) {
             return $this;

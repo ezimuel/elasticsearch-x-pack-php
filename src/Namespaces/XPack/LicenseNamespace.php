@@ -7,7 +7,7 @@ use Elasticsearch\Namespaces\AbstractNamespace;
 
 /**
  * Class LicenseNamespace
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Namespaces\XPack
@@ -17,7 +17,7 @@ use Elasticsearch\Namespaces\AbstractNamespace;
  */
 class LicenseNamespace extends AbstractNamespace
 {
-    /**
+        /**
      * Endpoint: xpack.license.delete
      *
      * @see https://www.elastic.co/guide/en/x-pack/current/license-management.html
@@ -26,8 +26,7 @@ class LicenseNamespace extends AbstractNamespace
     public function delete(array $params = [])
     {
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\License\Delete');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\License\Delete;
         $endpoint->setParams($params);
 
         return $this->performRequest($endpoint);
@@ -44,8 +43,7 @@ class LicenseNamespace extends AbstractNamespace
     public function get(array $params = [])
     {
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\License\Get');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\License\Get;
         $endpoint->setParams($params);
 
         return $this->performRequest($endpoint);
@@ -59,8 +57,7 @@ class LicenseNamespace extends AbstractNamespace
     public function getBasicStatus(array $params = [])
     {
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\License\GetBasicStatus');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\License\GetBasicStatus;
         $endpoint->setParams($params);
 
         return $this->performRequest($endpoint);
@@ -74,8 +71,7 @@ class LicenseNamespace extends AbstractNamespace
     public function getTrialStatus(array $params = [])
     {
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\License\GetTrialStatus');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\License\GetTrialStatus;
         $endpoint->setParams($params);
 
         return $this->performRequest($endpoint);
@@ -94,8 +90,7 @@ class LicenseNamespace extends AbstractNamespace
     {
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\License\Post');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\License\Post;
         $endpoint->setParams($params);
         $endpoint->setBody($body);
 
@@ -113,8 +108,7 @@ class LicenseNamespace extends AbstractNamespace
     public function postStartBasic(array $params = [])
     {
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\License\PostStartBasic');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\License\PostStartBasic;
         $endpoint->setParams($params);
 
         return $this->performRequest($endpoint);
@@ -132,8 +126,7 @@ class LicenseNamespace extends AbstractNamespace
     public function postStartTrial(array $params = [])
     {
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\License\PostStartTrial');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\License\PostStartTrial;
         $endpoint->setParams($params);
 
         return $this->performRequest($endpoint);

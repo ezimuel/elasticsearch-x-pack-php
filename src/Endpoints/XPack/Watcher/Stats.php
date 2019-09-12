@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class Stats
  * Elasticsearch API name xpack.watcher.stats
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Watcher
@@ -41,7 +41,7 @@ class Stats extends AbstractEndpoint
         return 'GET';
     }
     
-    public function setStats($metric): Stats
+    public function setMetric($metric): Stats
     {
         if (isset($metric) !== true) {
             return $this;

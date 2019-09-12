@@ -3,6 +3,9 @@ declare(strict_types = 1);
 
 namespace Elasticsearch;
 
+use Elasticsearch\Endpoints\XPack\Info;
+use Elasticsearch\Endpoints\XPack\Usage;
+use Elasticsearch\Namespaces\AbstractNamespace;
 use Elasticsearch\Namespaces\XPack\GraphNamespace;
 use Elasticsearch\Namespaces\XPack\LicenseNamespace;
 use Elasticsearch\Namespaces\XPack\MigrationNamespace;
@@ -25,7 +28,7 @@ use Elasticsearch\Transport;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
  */
-class XPack
+class XPack extends AbstractNamespace
 {
     protected $graph;
     protected $license;
@@ -113,8 +116,7 @@ class XPack
      */
     public function info(array $params = [])
     {
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Info');
+        $endpoint = new Info;
         $endpoint->setParams($params);
 
         return $this->performRequest($endpoint);
@@ -131,8 +133,7 @@ class XPack
      */
     public function usage(array $params = [])
     {
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Usage');
+        $endpoint = new Usage;
         $endpoint->setParams($params);
 
         return $this->performRequest($endpoint);

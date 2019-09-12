@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class StartDatafeed
  * Elasticsearch API name xpack.ml.start_datafeed
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -44,7 +44,7 @@ class StartDatafeed extends AbstractEndpoint
         return 'POST';
     }
     
-    public function setStartDatafeed($body): StartDatafeed
+    public function setBody($body): StartDatafeed
     {
         if (isset($body) !== true) {
             return $this;
@@ -54,7 +54,7 @@ class StartDatafeed extends AbstractEndpoint
         return $this;
     }
 
-    public function setStartDatafeed($datafeed_id): StartDatafeed
+    public function setDatafeedId($datafeed_id): StartDatafeed
     {
         if (isset($datafeed_id) !== true) {
             return $this;

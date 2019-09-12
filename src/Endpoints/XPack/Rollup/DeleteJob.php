@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class DeleteJob
  * Elasticsearch API name xpack.rollup.delete_job
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Rollup
@@ -40,7 +40,7 @@ class DeleteJob extends AbstractEndpoint
         return 'DELETE';
     }
     
-    public function setDeleteJob($id): DeleteJob
+    public function setId($id): DeleteJob
     {
         if (isset($id) !== true) {
             return $this;

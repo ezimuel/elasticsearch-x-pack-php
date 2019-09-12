@@ -7,7 +7,7 @@ use Elasticsearch\Namespaces\AbstractNamespace;
 
 /**
  * Class SqlNamespace
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Namespaces\XPack
@@ -30,8 +30,7 @@ class SqlNamespace extends AbstractNamespace
     {
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Sql\ClearCursor');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Sql\ClearCursor;
         $endpoint->setParams($params);
         $endpoint->setBody($body);
 
@@ -51,8 +50,7 @@ class SqlNamespace extends AbstractNamespace
     {
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Sql\Query');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Sql\Query;
         $endpoint->setParams($params);
         $endpoint->setBody($body);
 
@@ -71,8 +69,7 @@ class SqlNamespace extends AbstractNamespace
     {
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Sql\Translate');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Sql\Translate;
         $endpoint->setParams($params);
         $endpoint->setBody($body);
 

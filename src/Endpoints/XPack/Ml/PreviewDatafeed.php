@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class PreviewDatafeed
  * Elasticsearch API name xpack.ml.preview_datafeed
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -40,7 +40,7 @@ class PreviewDatafeed extends AbstractEndpoint
         return 'GET';
     }
     
-    public function setPreviewDatafeed($datafeed_id): PreviewDatafeed
+    public function setDatafeedId($datafeed_id): PreviewDatafeed
     {
         if (isset($datafeed_id) !== true) {
             return $this;

@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class PutCalendarJob
  * Elasticsearch API name xpack.ml.put_calendar_job
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -46,7 +46,7 @@ class PutCalendarJob extends AbstractEndpoint
         return 'PUT';
     }
     
-    public function setPutCalendarJob($calendar_id): PutCalendarJob
+    public function setCalendarId($calendar_id): PutCalendarJob
     {
         if (isset($calendar_id) !== true) {
             return $this;
@@ -56,7 +56,7 @@ class PutCalendarJob extends AbstractEndpoint
         return $this;
     }
 
-    public function setPutCalendarJob($job_id): PutCalendarJob
+    public function setJobId($job_id): PutCalendarJob
     {
         if (isset($job_id) !== true) {
             return $this;

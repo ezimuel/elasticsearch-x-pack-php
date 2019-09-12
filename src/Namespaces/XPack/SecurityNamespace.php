@@ -7,7 +7,7 @@ use Elasticsearch\Namespaces\AbstractNamespace;
 
 /**
  * Class SecurityNamespace
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Namespaces\XPack
@@ -26,8 +26,7 @@ class SecurityNamespace extends AbstractNamespace
     public function authenticate(array $params = [])
     {
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Security\Authenticate');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Security\Authenticate;
         $endpoint->setParams($params);
 
         return $this->performRequest($endpoint);
@@ -48,8 +47,7 @@ class SecurityNamespace extends AbstractNamespace
         $username = $this->extractArgument($params, 'username');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Security\ChangePassword');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Security\ChangePassword;
         $endpoint->setParams($params);
         $endpoint->setUsername($username);
         $endpoint->setBody($body);
@@ -70,8 +68,7 @@ class SecurityNamespace extends AbstractNamespace
     {
         $realms = $this->extractArgument($params, 'realms');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Security\ClearCachedRealms');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Security\ClearCachedRealms;
         $endpoint->setParams($params);
         $endpoint->setRealms($realms);
 
@@ -90,8 +87,7 @@ class SecurityNamespace extends AbstractNamespace
     {
         $name = $this->extractArgument($params, 'name');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Security\ClearCachedRoles');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Security\ClearCachedRoles;
         $endpoint->setParams($params);
         $endpoint->setName($name);
 
@@ -111,8 +107,7 @@ class SecurityNamespace extends AbstractNamespace
     {
         $name = $this->extractArgument($params, 'name');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Security\DeleteRole');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Security\DeleteRole;
         $endpoint->setParams($params);
         $endpoint->setName($name);
 
@@ -132,8 +127,7 @@ class SecurityNamespace extends AbstractNamespace
     {
         $name = $this->extractArgument($params, 'name');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Security\DeleteRoleMapping');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Security\DeleteRoleMapping;
         $endpoint->setParams($params);
         $endpoint->setName($name);
 
@@ -153,8 +147,7 @@ class SecurityNamespace extends AbstractNamespace
     {
         $username = $this->extractArgument($params, 'username');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Security\DeleteUser');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Security\DeleteUser;
         $endpoint->setParams($params);
         $endpoint->setUsername($username);
 
@@ -174,8 +167,7 @@ class SecurityNamespace extends AbstractNamespace
     {
         $username = $this->extractArgument($params, 'username');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Security\DisableUser');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Security\DisableUser;
         $endpoint->setParams($params);
         $endpoint->setUsername($username);
 
@@ -195,8 +187,7 @@ class SecurityNamespace extends AbstractNamespace
     {
         $username = $this->extractArgument($params, 'username');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Security\EnableUser');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Security\EnableUser;
         $endpoint->setParams($params);
         $endpoint->setUsername($username);
 
@@ -215,8 +206,7 @@ class SecurityNamespace extends AbstractNamespace
     {
         $name = $this->extractArgument($params, 'name');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Security\GetRole');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Security\GetRole;
         $endpoint->setParams($params);
         $endpoint->setName($name);
 
@@ -235,8 +225,7 @@ class SecurityNamespace extends AbstractNamespace
     {
         $name = $this->extractArgument($params, 'name');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Security\GetRoleMapping');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Security\GetRoleMapping;
         $endpoint->setParams($params);
         $endpoint->setName($name);
 
@@ -255,8 +244,7 @@ class SecurityNamespace extends AbstractNamespace
     {
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Security\GetToken');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Security\GetToken;
         $endpoint->setParams($params);
         $endpoint->setBody($body);
 
@@ -275,8 +263,7 @@ class SecurityNamespace extends AbstractNamespace
     {
         $username = $this->extractArgument($params, 'username');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Security\GetUser');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Security\GetUser;
         $endpoint->setParams($params);
         $endpoint->setUsername($username);
 
@@ -295,8 +282,7 @@ class SecurityNamespace extends AbstractNamespace
     {
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Security\InvalidateToken');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Security\InvalidateToken;
         $endpoint->setParams($params);
         $endpoint->setBody($body);
 
@@ -318,8 +304,7 @@ class SecurityNamespace extends AbstractNamespace
         $name = $this->extractArgument($params, 'name');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Security\PutRole');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Security\PutRole;
         $endpoint->setParams($params);
         $endpoint->setName($name);
         $endpoint->setBody($body);
@@ -342,8 +327,7 @@ class SecurityNamespace extends AbstractNamespace
         $name = $this->extractArgument($params, 'name');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Security\PutRoleMapping');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Security\PutRoleMapping;
         $endpoint->setParams($params);
         $endpoint->setName($name);
         $endpoint->setBody($body);
@@ -366,8 +350,7 @@ class SecurityNamespace extends AbstractNamespace
         $username = $this->extractArgument($params, 'username');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Security\PutUser');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Security\PutUser;
         $endpoint->setParams($params);
         $endpoint->setUsername($username);
         $endpoint->setBody($body);

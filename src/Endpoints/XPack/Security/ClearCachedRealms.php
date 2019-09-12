@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class ClearCachedRealms
  * Elasticsearch API name xpack.security.clear_cached_realms
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Security
@@ -42,7 +42,7 @@ class ClearCachedRealms extends AbstractEndpoint
         return 'POST';
     }
     
-    public function setClearCachedRealms($realms): ClearCachedRealms
+    public function setRealms($realms): ClearCachedRealms
     {
         if (isset($realms) !== true) {
             return $this;

@@ -7,7 +7,7 @@ use Elasticsearch\Namespaces\AbstractNamespace;
 
 /**
  * Class RollupNamespace
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Namespaces\XPack
@@ -30,8 +30,7 @@ class RollupNamespace extends AbstractNamespace
     {
         $id = $this->extractArgument($params, 'id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Rollup\DeleteJob');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Rollup\DeleteJob;
         $endpoint->setParams($params);
         $endpoint->setId($id);
 
@@ -50,8 +49,7 @@ class RollupNamespace extends AbstractNamespace
     {
         $id = $this->extractArgument($params, 'id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Rollup\GetJobs');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Rollup\GetJobs;
         $endpoint->setParams($params);
         $endpoint->setId($id);
 
@@ -70,8 +68,7 @@ class RollupNamespace extends AbstractNamespace
     {
         $id = $this->extractArgument($params, 'id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Rollup\GetRollupCaps');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Rollup\GetRollupCaps;
         $endpoint->setParams($params);
         $endpoint->setId($id);
 
@@ -92,8 +89,7 @@ class RollupNamespace extends AbstractNamespace
         $id = $this->extractArgument($params, 'id');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Rollup\PutJob');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Rollup\PutJob;
         $endpoint->setParams($params);
         $endpoint->setId($id);
         $endpoint->setBody($body);
@@ -117,8 +113,7 @@ class RollupNamespace extends AbstractNamespace
         $type = $this->extractArgument($params, 'type');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Rollup\RollupSearch');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Rollup\RollupSearch;
         $endpoint->setParams($params);
         $endpoint->setIndex($index);
         $endpoint->setType($type);
@@ -139,8 +134,7 @@ class RollupNamespace extends AbstractNamespace
     {
         $id = $this->extractArgument($params, 'id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Rollup\StartJob');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Rollup\StartJob;
         $endpoint->setParams($params);
         $endpoint->setId($id);
 
@@ -159,8 +153,7 @@ class RollupNamespace extends AbstractNamespace
     {
         $id = $this->extractArgument($params, 'id');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Rollup\StopJob');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Rollup\StopJob;
         $endpoint->setParams($params);
         $endpoint->setId($id);
 

@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class PutRoleMapping
  * Elasticsearch API name xpack.security.put_role_mapping
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Security
@@ -42,7 +42,7 @@ class PutRoleMapping extends AbstractEndpoint
         return 'PUT';
     }
     
-    public function setPutRoleMapping($body): PutRoleMapping
+    public function setBody($body): PutRoleMapping
     {
         if (isset($body) !== true) {
             return $this;
@@ -52,7 +52,7 @@ class PutRoleMapping extends AbstractEndpoint
         return $this;
     }
 
-    public function setPutRoleMapping($name): PutRoleMapping
+    public function setName($name): PutRoleMapping
     {
         if (isset($name) !== true) {
             return $this;

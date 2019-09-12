@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class EnableUser
  * Elasticsearch API name xpack.security.enable_user
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Security
@@ -39,7 +39,7 @@ class EnableUser extends AbstractEndpoint
         return 'PUT';
     }
     
-    public function setEnableUser($username): EnableUser
+    public function setUsername($username): EnableUser
     {
         if (isset($username) !== true) {
             return $this;

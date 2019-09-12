@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class RevertModelSnapshot
  * Elasticsearch API name xpack.ml.revert_model_snapshot
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -48,7 +48,7 @@ class RevertModelSnapshot extends AbstractEndpoint
         return 'POST';
     }
     
-    public function setRevertModelSnapshot($body): RevertModelSnapshot
+    public function setBody($body): RevertModelSnapshot
     {
         if (isset($body) !== true) {
             return $this;
@@ -58,7 +58,7 @@ class RevertModelSnapshot extends AbstractEndpoint
         return $this;
     }
 
-    public function setRevertModelSnapshot($job_id): RevertModelSnapshot
+    public function setJobId($job_id): RevertModelSnapshot
     {
         if (isset($job_id) !== true) {
             return $this;
@@ -68,7 +68,7 @@ class RevertModelSnapshot extends AbstractEndpoint
         return $this;
     }
 
-    public function setRevertModelSnapshot($snapshot_id): RevertModelSnapshot
+    public function setSnapshotId($snapshot_id): RevertModelSnapshot
     {
         if (isset($snapshot_id) !== true) {
             return $this;

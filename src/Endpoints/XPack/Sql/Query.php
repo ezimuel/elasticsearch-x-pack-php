@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class Query
  * Elasticsearch API name xpack.sql.query
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Sql
@@ -36,7 +36,7 @@ class Query extends AbstractEndpoint
         return isset($this->body) ? 'POST' : 'GET';
     }
     
-    public function setQuery($body): Query
+    public function setBody($body): Query
     {
         if (isset($body) !== true) {
             return $this;

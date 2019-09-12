@@ -7,7 +7,7 @@ use Elasticsearch\Namespaces\AbstractNamespace;
 
 /**
  * Class GraphNamespace
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Namespaces\XPack
@@ -17,7 +17,7 @@ use Elasticsearch\Namespaces\AbstractNamespace;
  */
 class GraphNamespace extends AbstractNamespace
 {
-    /**
+        /**
      * Endpoint: xpack.graph.explore
      *
      * @see https://www.elastic.co/guide/en/elasticsearch/reference/current/graph-explore-api.html
@@ -36,8 +36,7 @@ class GraphNamespace extends AbstractNamespace
         $type = $this->extractArgument($params, 'type');
         $body = $this->extractArgument($params, 'body');
 
-        $endpointBuilder = $this->endpoints;
-        $endpoint = $endpointBuilder('XPack\Graph\Explore');
+        $endpoint = new \Elasticsearch\Endpoints\XPack\Graph\Explore;
         $endpoint->setParams($params);
         $endpoint->setIndex($index);
         $endpoint->setType($type);

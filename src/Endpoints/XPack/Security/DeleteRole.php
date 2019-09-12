@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class DeleteRole
  * Elasticsearch API name xpack.security.delete_role
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Security
@@ -42,7 +42,7 @@ class DeleteRole extends AbstractEndpoint
         return 'DELETE';
     }
     
-    public function setDeleteRole($name): DeleteRole
+    public function setName($name): DeleteRole
     {
         if (isset($name) !== true) {
             return $this;

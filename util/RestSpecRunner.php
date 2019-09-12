@@ -1,6 +1,8 @@
 <?php
 declare(strict_types = 1);
 
+use Elasticsearch\ClientBuilder;
+
 error_reporting(E_ALL | E_STRICT);
 
 // Set the default timezone. While this doesn't cause any tests to fail, PHP
@@ -17,11 +19,16 @@ echo "Base directory: ". dirname(__DIR__)."\n";
 
 $autoloader = require_once(dirname(__DIR__) . '/vendor/autoload.php');
 
-$host = $_ENV['ES_TEST_HOST'] ?? 'localhost:9200';
+$host = getenv('ES_TEST_HOST') ?? null;
+if (empty($host)) {
+    throw new RuntimeException('You need to specify the ES_TEST_HOST');
+}
 
-$client = \Elasticsearch\ClientBuilder::fromConfig([
-	'hosts' => [$host]
-]);
+$client = ClientBuilder::create()
+    ->setHosts([$host])
+    ->setSSLVerification(dirname(__DIR__) . '/travis/certs/ca_localhost.crt')
+    ->build();
+
 $serverInfo = $client->info();
 var_dump($serverInfo);
 

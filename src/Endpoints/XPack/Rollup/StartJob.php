@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class StartJob
  * Elasticsearch API name xpack.rollup.start_job
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Rollup
@@ -40,7 +40,7 @@ class StartJob extends AbstractEndpoint
         return 'POST';
     }
     
-    public function setStartJob($id): StartJob
+    public function setId($id): StartJob
     {
         if (isset($id) !== true) {
             return $this;

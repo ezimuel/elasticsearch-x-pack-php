@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class StopJob
  * Elasticsearch API name xpack.rollup.stop_job
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Rollup
@@ -40,7 +40,7 @@ class StopJob extends AbstractEndpoint
         return 'POST';
     }
     
-    public function setStopJob($id): StopJob
+    public function setId($id): StopJob
     {
         if (isset($id) !== true) {
             return $this;

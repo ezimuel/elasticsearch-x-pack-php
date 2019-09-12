@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class DeleteDatafeed
  * Elasticsearch API name xpack.ml.delete_datafeed
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -42,7 +42,7 @@ class DeleteDatafeed extends AbstractEndpoint
         return 'DELETE';
     }
     
-    public function setDeleteDatafeed($datafeed_id): DeleteDatafeed
+    public function setDatafeedId($datafeed_id): DeleteDatafeed
     {
         if (isset($datafeed_id) !== true) {
             return $this;

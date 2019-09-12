@@ -8,7 +8,7 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class DeleteCalendarJob
  * Elasticsearch API name xpack.ml.delete_calendar_job
- * Generated running $ php util/GenerateEndpoints.php 6.3.0
+ * Generated running $ php util/GenerateEndpoints.php 6.3.2
  *
  * @category Elasticsearch
  * @package  Elasticsearch\Endpoints\XPack\\Ml
@@ -46,7 +46,7 @@ class DeleteCalendarJob extends AbstractEndpoint
         return 'DELETE';
     }
     
-    public function setDeleteCalendarJob($calendar_id): DeleteCalendarJob
+    public function setCalendarId($calendar_id): DeleteCalendarJob
     {
         if (isset($calendar_id) !== true) {
             return $this;
@@ -56,7 +56,7 @@ class DeleteCalendarJob extends AbstractEndpoint
         return $this;
     }
 
-    public function setDeleteCalendarJob($job_id): DeleteCalendarJob
+    public function setJobId($job_id): DeleteCalendarJob
     {
         if (isset($job_id) !== true) {
             return $this;
